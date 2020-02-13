@@ -2,7 +2,7 @@ package main;
 
 /**
  *
- * @Authors Alejandro, Nimra, Arturo
+ * @Author Alejandro, @Author Arturo, @Author Nimra
  */
 public class main {
     public static void main(String[] args) {
