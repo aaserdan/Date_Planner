@@ -12,7 +12,7 @@ import org.json.*;
 /**
  *
  */
-public class weatherAPI {
+public class WeatherAPI {
 
     public static void getWeather(String zipCode, String country) {
 
@@ -21,7 +21,7 @@ public class weatherAPI {
         String callAction = "/data/2.5/weather?q=";
 
         //Build the URL
-        String urlString = baseURL + callAction + zipCode + "," + country + "&appid=" + api_keys.OPENWEATHERMAP();
+        String urlString = baseURL + callAction + zipCode + "," + country + "&appid=" + API_keys.OPENWEATHERMAP();
         URL url;
 
         try {
@@ -51,7 +51,7 @@ public class weatherAPI {
             JSONObject obj = new JSONObject(content.toString());
 
         } catch (IOException | JSONException ex) {
-            Logger.getLogger(weatherAPI.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WeatherAPI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

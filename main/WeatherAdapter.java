@@ -1,9 +1,9 @@
 package main;
 
-public class weatherAdapter {
-    
+public class WeatherAdapter {
+
     public static void getWeatherInfo_ZIPCODE(String zipCode, String countryCode) {
-        weatherAPI.getWeather(zipCode, countryCode);
+        WeatherAPI.getWeather(zipCode, countryCode);
     }
-    
+
 }

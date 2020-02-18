@@ -5,7 +5,7 @@ package main;
  *
  *
  */
-public class api_keys {
+public class API_keys {
 
     public static String OPENWEATHERMAP() {
         String api_key = "4185291754b0855664266d39e5ceee45";

@@ -13,7 +13,7 @@ import org.json.*;
  *
  *
  */
-public class yelpAPI {
+public class YelpAPI {
 
     public static void findRestaurants(String term, String location, int limit) {
 
@@ -33,7 +33,7 @@ public class yelpAPI {
             connection.setRequestMethod("GET");
 
             //Set the request header for authorization to use the Yelp API
-            connection.setRequestProperty("Authorization", "Bearer " + api_keys.YELP());
+            connection.setRequestProperty("Authorization", "Bearer " + API_keys.YELP());
 
             //Prints out the response code
             int status = connection.getResponseCode();
@@ -54,7 +54,7 @@ public class yelpAPI {
             JSONObject obj = new JSONObject(content.toString());
 
         } catch (IOException | JSONException ex) {
-            Logger.getLogger(yelpAPI.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(YelpAPI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
