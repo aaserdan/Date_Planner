@@ -1,5 +1,11 @@
 package main;
 
+/** Class used to make calls to the Yelp API given data from the YelpAdapter
+ *
+ * Last updated February 18 2020
+ * @Author Alejandro, @Author Arturo, @Author Nimra
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,20 +15,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.*;
 
-/**
- *
- *
- */
 public class YelpAPI {
 
-    public static void findRestaurants(String term, String location, int limit) {
+    /** Method that makes a API call to the Yelp API for a list of restaurants
+     * in the location given by the user
+     *
+     * @param _term breakfast, lunch, or dinner, etc.
+     * @param _city city where user is located
+     * @param _limit search limit chosen by the user
+     */
+    public static void findRestaurants(String _term, String _city, int _limit) {
 
         // Create a HTTP Connection.
         String baseUrl = "https://api.yelp.com";
         String callAction = "/v3/businesses/search?";
 
         //Build the url
-        String urlString = baseUrl + callAction + "term=" + term + "&location=" + location + "&limit=" + limit;
+        String urlString = baseUrl + callAction + "term=" + _term + "&location=" + _city + "&limit=" + _limit;
         URL url;
 
         try {
@@ -33,7 +42,7 @@ public class YelpAPI {
             connection.setRequestMethod("GET");
 
             //Set the request header for authorization to use the Yelp API
-            connection.setRequestProperty("Authorization", "Bearer " + API_keys.YELP());
+            connection.setRequestProperty("Authorization", "Bearer " + API_keys.yelp());
 
             //Prints out the response code
             int status = connection.getResponseCode();

@@ -1,5 +1,12 @@
 package main;
 
+/** Weather API class
+ * Class used to make calls to the WeatherAPI given data from the WeatherAdapter
+ *
+ * Last updated February 18 2020
+ * @Author Alejandro, @Author Arturo, @Author Nimra
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,19 +16,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.*;
 
-/**
- *
- */
 public class WeatherAPI {
 
-    public static void getWeather(String zipCode, String country) {
+    /** Method used to grab data from the weather API
+     *
+     * @param _zipCode zip code where the user is located
+     * @param _country country where the user is located
+     */
+    public static void getWeather(String _zipCode, String _country) {
 
         // Create a HTTP Connection.
         String baseURL = "http://api.openweathermap.org";
         String callAction = "/data/2.5/weather?q=";
 
         //Build the URL
-        String urlString = baseURL + callAction + zipCode + "," + country + "&appid=" + API_keys.OPENWEATHERMAP();
+        String urlString = baseURL + callAction + _zipCode + "," + _country + "&appid=" + API_keys.openWeatherMapAPI();
         URL url;
 
         try {
