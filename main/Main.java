@@ -1,19 +1,20 @@
 package main;
-
-/**
+/** Our temporary main file for the program that is used for testing the code
  *
+ * Last updated February 18 2020
  * @Author Alejandro, @Author Arturo, @Author Nimra
  */
-public class main {
+
+public class Main {
     public static void main(String[] args) {
-        
+
         String city = "greensboro";
         String term = "dinner";
         String zipCode = "27403";
         String countryCode = "us";
         int searchLimitYelp = 3;
-        
-        weatherAdapter.getWeatherInfo_ZIPCODE(zipCode, countryCode);
-        yelpAdapter.getYelpInfo(term, city, searchLimitYelp);
+
+        WeatherAdapter.getWeatherInfo_ZIPCODE(zipCode, countryCode);
+        YelpAdapter.getYelpInfo(term, city, searchLimitYelp);
     }
 }
