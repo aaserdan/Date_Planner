@@ -1,5 +1,7 @@
 package main;
 
+import apis.WeatherAPI;
+
 /** Controller used to manipulate and pass the given data to the WeatherAPI class
  *
  * Last updated February 18 2020

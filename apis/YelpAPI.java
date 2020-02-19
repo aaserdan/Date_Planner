@@ -1,4 +1,4 @@
-package main;
+package apis;
 
 /** Class used to make calls to the Yelp API given data from the YelpAdapter
  *
@@ -6,6 +6,7 @@ package main;
  * @Author Alejandro
  */
 
+import apis.API_keys;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package main;
+package apis;
 
 /** Class used to store the API keys used for the Date Planner application
  *
