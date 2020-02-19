@@ -4,7 +4,7 @@ package main;
  * Class used to make calls to the WeatherAPI given data from the WeatherAdapter
  *
  * Last updated February 18 2020
- * @Author Alejandro, @Author Arturo, @Author Nimra
+ * @Author Arturo
  */
 
 import java.io.BufferedReader;

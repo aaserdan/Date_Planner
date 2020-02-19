@@ -3,7 +3,7 @@ package main;
 /** Class used to make calls to the Yelp API given data from the YelpAdapter
  *
  * Last updated February 18 2020
- * @Author Alejandro, @Author Arturo, @Author Nimra
+ * @Author Alejandro
  */
 
 import java.io.BufferedReader;
