@@ -3,7 +3,7 @@ package models;
 /**
  * Model for the users
  *
- * Last updated February 18 2020
+ * Last updated February 19 2020
  *
  * @Author Alejandro
  */

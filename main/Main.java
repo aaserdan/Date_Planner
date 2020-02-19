@@ -2,7 +2,7 @@ package main;
 
 /** Our temporary main file for the program that is used for testing the code
  *
- * Last updated February 18 2020
+ * Last updated February 19 2020
  * @Author Alejandro, @Author Arturo, @Author Nimra
  */
 
@@ -11,6 +11,10 @@ import views.*;
 import controllers.*;
 
 public class Main {
+
+    /** Main method that runs the program
+     *
+     */
     public static void main(String[] args) {
 
         User model = userFromDatabase();
@@ -19,18 +23,6 @@ public class Main {
         UserController controller = new UserController(model, view);
 
         controller.updateView();
-
-        /** LINES 26-33 ARE STRICTLY FOR TESTING THE API. DO NOT DELETE.
-         *
-         */
-        String city = "greensboro";
-        String term = "dinner";
-        int zipCode = 27403;
-        String countryCode = "us";
-        int searchLimitYelp = 3;
-
-        WeatherAdapter.getWeatherInfo_ZIPCODE(zipCode, countryCode);
-        YelpAdapter.getYelpInfo(term, city, searchLimitYelp);
     }
 
     /** Temporary 'database' to test the application
