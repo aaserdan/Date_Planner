@@ -7,8 +7,9 @@ package controllers;
  * @Author Alejandro
  */
 
-import models.User;
-import views.UserView;
+import models.*;
+import views.*;
+import apis.*;
 
 public class UserController {
     private User model;
