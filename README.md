@@ -1,6 +1,6 @@
 # Date Planner
 
-Application for CSC 340 that allows 2 users to input what they are in the mood for when going on a date, and then receiving data back about everything around them based on their given data.
+Application for CSC 340 that allows 2 users to input what they are in the mood for when going on a date, and then receive data back about everything around them based on their given data.
 
 ## Authors
 
