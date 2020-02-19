@@ -3,7 +3,7 @@ package main;
 /** Controller used to manipulate and pass the given data to the WeatherAPI class
  *
  * Last updated February 18 2020
- * @Author Alejandro, @Author Arturo, @Author Nimra
+ * @Author Nimra
  */
 
 public class WeatherAdapter {
