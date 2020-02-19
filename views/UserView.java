@@ -8,7 +8,7 @@ package views;
  */
 
 public class UserView {
-    public void printResults(String _name, String _city, String _term, String _zipCode, String _countryCode, int _searchLimitYelp) {
+    public void printResults(String _name, String _city, String _term, int _zipCode, String _countryCode, int _searchLimitYelp) {
         System.out.println("User: " + _name);
         System.out.println("City: " + _city);
         System.out.println("Term Used: " + _term);

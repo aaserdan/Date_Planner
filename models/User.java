@@ -12,7 +12,7 @@ public class User {
     private String name;
     private String city;
     private String term;
-    private String zipCode;
+    private int zipCode;
     private String countryCode;
     private int searchLimitYelp;
 
@@ -30,7 +30,7 @@ public class User {
         return this.term;
     }
 
-    public String getZipCode() {
+    public int getZipCode() {
         return this.zipCode;
     }
 
@@ -53,18 +53,18 @@ public class User {
     }
 
     public void setTerm(String _term) {
-        this.city = _term;
+        this.term = _term;
     }
 
-    public void setZipCode(String _zipCode) {
-        this.city = _zipCode;
+    public void setZipCode(int _zipCode) {
+        this.zipCode = _zipCode;
     }
 
     public void setCountryCode(String _countryCode) {
-        this.city = _countryCode;
+        this.countryCode = _countryCode;
     }
 
-    public void setSearchLimitYelp(String _searchLimitYelp) {
-        this.city = _searchLimitYelp;
+    public void setSearchLimitYelp(int _searchLimitYelp) {
+        this.searchLimitYelp = _searchLimitYelp;
     }
 }

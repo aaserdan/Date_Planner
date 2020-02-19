@@ -7,7 +7,6 @@ package apis;
  * @Author Arturo
  */
 
-import apis.API_keys;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,7 +23,7 @@ public class WeatherAPI {
      * @param _zipCode zip code where the user is located
      * @param _country country where the user is located
      */
-    public static void getWeather(String _zipCode, String _country) {
+    public static void getWeather(int _zipCode, String _country) {
 
         // Create a HTTP Connection.
         String baseURL = "http://api.openweathermap.org";
