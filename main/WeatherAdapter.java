@@ -1,6 +1,6 @@
 package main;
 
-import apis.WeatherAPI;
+import apis.*;
 
 /** Controller used to manipulate and pass the given data to the WeatherAPI class
  *
@@ -15,7 +15,7 @@ public class WeatherAdapter {
      * @param zipCode zip code where the user is searching for food
      * @param countryCode country where user is located
      */
-    public static void getWeatherInfo_ZIPCODE(String zipCode, String countryCode) {
+    public static void getWeatherInfo_ZIPCODE(int zipCode, String countryCode) {
         WeatherAPI.getWeather(zipCode, countryCode);
     }
 }

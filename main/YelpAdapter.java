@@ -1,6 +1,6 @@
 package main;
 
-import apis.YelpAPI;
+import apis.*;
 
 /** Controller used to manipulate and pass the given data to the YelpAPI class
  *
