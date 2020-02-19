@@ -9,11 +9,10 @@ package controllers;
 
 import models.*;
 import views.*;
-import apis.*;
 
 public class UserController {
-    private User model;
-    private UserView view;
+    private final User model;
+    private final UserView view;
 
     public UserController(User _model, UserView _view){
         this.model = _model;
