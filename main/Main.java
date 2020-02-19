@@ -14,6 +14,7 @@ public class Main {
 
     /** Main method that runs the program
      *
+     * @param args
      */
     public static void main(String[] args) {
 
