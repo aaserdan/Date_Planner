@@ -1,4 +1,4 @@
-package main;
+package views;
 
 /** View for the user information and requested data
  *

@@ -1,4 +1,4 @@
-package main;
+package apis;
 
 /** Weather API class
  * Class used to make calls to the WeatherAPI given data from the WeatherAdapter
@@ -7,6 +7,7 @@ package main;
  * @Author Arturo
  */
 
+import apis.API_keys;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

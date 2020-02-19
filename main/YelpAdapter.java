@@ -1,5 +1,7 @@
 package main;
 
+import apis.YelpAPI;
+
 /** Controller used to manipulate and pass the given data to the YelpAPI class
  *
  * Last updated February 18 2020

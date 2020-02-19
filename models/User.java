@@ -1,4 +1,4 @@
-package main;
+package models;
 
 /**
  * Model for the users
