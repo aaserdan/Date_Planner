@@ -17,28 +17,44 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+        User model1 = userFromDatabase();
+        UserView view1 = new UserView();
 
-        User model = userFromDatabase();
-        UserView view = new UserView();
+        User model2 = user2FromDatabase();
+        UserView view2 = new UserView();
 
-        UserController controller = new UserController(model, view);
+        UserController controller1 = new UserController(model1, view1);
+        UserController controller2 = new UserController(model2, view2);
 
-        controller.updateView();
+        controller1.updateView();
+        controller2.updateView();
     }
 
     /** Temporary 'database' to test the application
      *
-     * @return user
+     * @return user1 and user2
      */
     private static User userFromDatabase() {
-        User user = new User();
-        user.setName("Alex");
-        user.setCity("greensboro");
-        user.setCountryCode("us");
-        user.setTerm("dinner");
-        user.setSearchLimitYelp(3);
-        user.setZipCode(27403);
+        User user1 = new User();
+        user1.setName("Alex");
+        user1.setCity("greensboro");
+        user1.setCountryCode("us");
+        user1.setTerm("dinner");
+        user1.setSearchLimitYelp(3);
+        user1.setZipCode(27403);
 
-        return user;
+        return user1;
+    }
+
+    private static User user2FromDatabase() {
+        User user2 = new User();
+        user2.setName("Myra");
+        user2.setCity("raleigh");
+        user2.setCountryCode("us");
+        user2.setTerm("dinner");
+        user2.setSearchLimitYelp(5);
+        user2.setZipCode(27513);
+
+        return user2;
     }
 }

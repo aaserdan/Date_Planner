@@ -46,7 +46,10 @@ public class YelpAPI {
 
             //Prints out the response code
             int status = connection.getResponseCode();
-            System.out.println("Response Code: " + status);
+
+            //Response code used for debugging
+            System.out.println("Yelp API Response Code: " + status + " ---> SHOWN DURING DEBUG");
+
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String inputLine;
             StringBuilder content = new StringBuilder();
@@ -58,10 +61,31 @@ public class YelpAPI {
             inputStream.close();
             connection.disconnect();
 
-            //Outputs the content
-            System.out.println("Output: " + content.toString());
+            // Saves API response into an object
             JSONObject obj = new JSONObject(content.toString());
+            JSONArray jsonArray = obj.getJSONArray("businesses");
 
+            // Outputting the restaurants and their respective ratings
+            for (int i = 0; i < _limit; i++) {
+                JSONObject businessIndex = jsonArray.getJSONObject(i);
+                JSONObject businessLocation = businessIndex.getJSONObject("location");
+
+                // Grabbing all restaurant data and placing them in their respective variables
+                String restaurantAddress = businessLocation.getString("address1");
+                String restaurantName = businessIndex.getString("name");
+                String restaurantRating = businessIndex.getString("rating");
+                String priceRange = businessIndex.getString("price");
+                String phoneNum = businessIndex.getString("display_phone");
+
+                // Displaying all of the restaurant data
+                System.out.println("Restaurant " + (i + 1) + ":");
+                System.out.println("-------- * --------");
+                System.out.println("Restaurant Name: " + restaurantName + "");
+                System.out.println("Address: " + restaurantAddress);
+                System.out.println("Phone Number: " + phoneNum);
+                System.out.println("Rating: " + restaurantRating);
+                System.out.println("Price: " + priceRange + "\n");
+            }
         } catch (IOException | JSONException ex) {
             Logger.getLogger(YelpAPI.class.getName()).log(Level.SEVERE, null, ex);
         }

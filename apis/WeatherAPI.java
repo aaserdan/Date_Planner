@@ -42,7 +42,9 @@ public class WeatherAPI {
 
             //Prints the respone code
             int status = connection.getResponseCode();
-            System.out.println("Response Code: " + status);
+
+            //Response code used for debugging
+            System.out.println("Weather API Response Code: " + status + " ---> SHOWN DURING DEBUG");
 
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String inputLine;
@@ -55,9 +57,19 @@ public class WeatherAPI {
             inputStream.close();
             connection.disconnect();
 
-            //Outputing the data
-            System.out.println("Output: " + content.toString());
+            // Saving the data into an object
             JSONObject obj = new JSONObject(content.toString());
+
+            // Extracting the main object from the response for the temperature
+            JSONObject mainObj = obj.getJSONObject("main");
+            String currentTemp = mainObj.getString("temp");
+            System.out.println("Current Temperature: " + currentTemp);
+
+            //Extracting the weather array for the weather description
+            JSONArray jsonArray = obj.getJSONArray("weather");
+            JSONObject weatherDescription = jsonArray.getJSONObject(0);
+            String weatherDesc = weatherDescription.getString("description");
+            System.out.println("Weather Description: " + weatherDesc + "\n");
 
         } catch (IOException | JSONException ex) {
             Logger.getLogger(WeatherAPI.class.getName()).log(Level.SEVERE, null, ex);
