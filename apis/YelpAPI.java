@@ -46,7 +46,10 @@ public class YelpAPI {
 
             //Prints out the response code
             int status = connection.getResponseCode();
+
+            //Response code used for debugging
             System.out.println("Response Code: " + status);
+
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String inputLine;
             StringBuilder content = new StringBuilder();
