@@ -44,7 +44,7 @@ public class WeatherAPI {
             int status = connection.getResponseCode();
 
             //Response code used for debugging
-            System.out.println("Weather API Response Code: " + status);
+            System.out.println("Weather API Response Code: " + status + " ---> SHOWN DURING DEBUG");
 
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String inputLine;
