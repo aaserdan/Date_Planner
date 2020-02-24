@@ -39,7 +39,7 @@ public class Main {
         user1.setName("Alex");
         user1.setCity("greensboro");
         user1.setCountryCode("us");
-        user1.setTerm("dinner");
+        user1.setTerm("pasta");
         user1.setSearchLimitYelp(3);
         user1.setZipCode(27403);
 

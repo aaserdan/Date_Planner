@@ -62,8 +62,10 @@ public class WeatherAPI {
 
             // Extracting the main object from the response for the temperature
             JSONObject mainObj = obj.getJSONObject("main");
-            String currentTemp = mainObj.getString("temp");
-            System.out.println("Current Temperature: " + currentTemp);
+            int currentTemp = mainObj.getInt("temp");
+
+            // Converting the temperature from Kelvin -> Celcius -> Fahrenheit
+            System.out.println("Current Temperature: " + (int) (((currentTemp - 273.15) * 1.8) + 32) + " F");
 
             //Extracting the weather array for the weather description
             JSONArray jsonArray = obj.getJSONArray("weather");
