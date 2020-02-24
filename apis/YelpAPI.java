@@ -2,7 +2,7 @@ package apis;
 
 /** Class used to make calls to the Yelp API given data from the YelpAdapter
  *
- * Last updated February 18 2020
+ * Last updated February 24 2020
  * @Author Alejandro
  */
 

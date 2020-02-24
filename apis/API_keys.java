@@ -8,7 +8,7 @@ package apis;
 
 public class API_keys {
 
-    /** Method used to store the weather API key
+    /** Method used to store the weather API key (Arturo's Key)
      *
      * @return API key for the weather API
      */
@@ -18,7 +18,7 @@ public class API_keys {
         return api_key;
     }
 
-    /** Method used to store the Yelp API key
+    /** Method used to store the Yelp API key (Alejandro's Key)
      *
      * @return the API key for the Yelp API
      */

@@ -30,7 +30,5 @@ public class UserView {
         System.out.println("Search Limit: " + _searchLimitYelp);
 
         System.out.println("================================================");
-        apis.WeatherAPI.getWeather(_zipCode, _countryCode);
-        apis.YelpAPI.findRestaurants(_term, _city, _searchLimitYelp);
     }
 }
