@@ -3,7 +3,7 @@ package controllers;
 /** Controller used to manipulate the users data and make calls to the
  *  appropriate models and views
  *
- * Last updated February 19 2020
+ * Last updated February 24 2020
  * @Author Alejandro
  */
 
@@ -24,6 +24,8 @@ public class UserController {
      */
     public void updateView() {
         view.printResults(model.getName(), model.getCity(), model.getTerm(), model.getZipCode(), model.getCountryCode(), model.getSearchLimitYelp());
+        getWeather();
+        getRestaurants();
     }
 
     //======================== SETTERS ========================
@@ -53,6 +55,14 @@ public class UserController {
     }
 
     //======================== GETTERS ========================
+
+    public void getRestaurants() {
+        apis.YelpAPI.findRestaurants(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
+    }
+
+    public void getWeather() {
+        apis.WeatherAPI.getWeather(model.getZipCode(), model.getCountryCode());
+    }
 
     public String getName() {
         return model.getName();

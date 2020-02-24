@@ -2,7 +2,7 @@ package main;
 
 /** Our temporary main file for the program that is used for testing the code
  *
- * Last updated February 19 2020
+ * Last updated February 24 2020
  * @Author Alejandro, @Author Arturo, @Author Nimra
  */
 
@@ -20,19 +20,19 @@ public class Main {
         User model1 = userFromDatabase();
         UserView view1 = new UserView();
 
-        User model2 = user2FromDatabase();
-        UserView view2 = new UserView();
+    //  User model2 = user2FromDatabase();
+    //  UserView view2 = new UserView();
 
         UserController controller1 = new UserController(model1, view1);
-        UserController controller2 = new UserController(model2, view2);
+    //  UserController controller2 = new UserController(model2, view2);
 
         controller1.updateView();
-        controller2.updateView();
+    //  controller2.updateView();
     }
 
-    /** Temporary 'database' to test the application
+    /** Temporary 'database' for user 1 to test the application
      *
-     * @return user1 and user2
+     * @return user1 data
      */
     private static User userFromDatabase() {
         User user1 = new User();
@@ -46,6 +46,10 @@ public class Main {
         return user1;
     }
 
+    /** Temporary 'database' for user 2 to test the application
+     *
+     * @return user2 data
+     */
     private static User user2FromDatabase() {
         User user2 = new User();
         user2.setName("Myra");

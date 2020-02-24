@@ -3,7 +3,7 @@ package apis;
 /** Weather API class
  * Class used to make calls to the WeatherAPI given data from the WeatherAdapter
  *
- * Last updated February 18 2020
+ * Last updated February 24 2020
  * @Author Arturo
  */
 
