@@ -18,8 +18,6 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        System.out.println("Hey im nimra");
-
         User model1 = userFromDatabase();
         UserView view1 = new UserView();
 
