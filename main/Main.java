@@ -36,12 +36,12 @@ public class Main {
      */
     private static User userFromDatabase() {
         User user1 = new User();
-        user1.setName("Alex");
-        user1.setCity("greensboro");
+        user1.setName("Brandon");
+        user1.setCity("raleigh");
         user1.setCountryCode("us");
         user1.setTerm("pasta");
-        user1.setSearchLimitYelp(3);
-        user1.setZipCode(27403);
+        user1.setSearchLimitYelp(7);
+        user1.setZipCode(27513);
 
         return user1;
     }
