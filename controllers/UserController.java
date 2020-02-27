@@ -19,6 +19,10 @@ public class UserController {
         this.view = _view;
     }
 
+    public UserController() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /** Updates the view
      *
      */
@@ -87,4 +91,5 @@ public class UserController {
     public int getYelpSearchLimit() {
         return model.getSearchLimitYelp();
     }
+    
 }

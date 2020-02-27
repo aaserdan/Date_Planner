@@ -17,6 +17,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+
         User model1 = userFromDatabase();
         UserView view1 = new UserView();
 
