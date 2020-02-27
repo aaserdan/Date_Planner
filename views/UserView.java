@@ -14,7 +14,7 @@ public class UserView {
      *
      * @param _name name of the user
      * @param _city city given by user
-     * @param _term term given by user (breakfast, lunch, or dinner)
+     * @param _term term given by user ('pasta', 'seafood', etc.)
      * @param _zipCode zip code given by user
      * @param _countryCode country code given by user (ex. 'us')
      * @param _searchLimitYelp search limit given by user
@@ -29,6 +29,7 @@ public class UserView {
         System.out.println("Country Code: " + _countryCode);
         System.out.println("Search Limit: " + _searchLimitYelp);
 
+        // Here to seperate the data given and the results of the program
         System.out.println("================================================");
     }
 }
