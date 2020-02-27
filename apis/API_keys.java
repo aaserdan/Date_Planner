@@ -3,7 +3,7 @@ package apis;
 /** Class used to store the API keys used for the Date Planner application
  *
  * Last updated February 16 2020
- * @Author Alejandro, @Author Arturo, @Author Nimra
+ * @Author Alejandro, @Author Arturo
  */
 
 public class API_keys {
