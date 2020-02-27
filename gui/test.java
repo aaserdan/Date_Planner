@@ -19,10 +19,10 @@ public class test {
      * Loads home screen panel.
      */
     public void HomePanel() {
-        
+
     }
     /**
-     * Loads about us panel. 
+     * Loads about us panel.
      */
     public void AboustUsPanel() {
 
@@ -45,5 +45,4 @@ public class test {
     public void ContactUsPanel() {
 
     }
-
-    }
+}
