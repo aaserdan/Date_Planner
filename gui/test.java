@@ -1,49 +1,53 @@
 package gui;
 
-import controllers.UserController;
-
-
-/**Class to display GUI to the user
+/**
+ * Class to display GUI to the user
  *
  *
  * Last updated February 26 2020
  *
  * @author Nimra
  */
+import controllers.UserController;
+
 public class test {
 
     // Giving access to models so they could display the information.
     private final UserController modcontroler = new UserController();
 
     /**
-     * Loads home screen panel.
+     * Loads home screen screen.
      */
-    public void HomePanel() {
-        
+    public void homeScreen() {
+
     }
+
     /**
-     * Loads about us panel. 
+     * Loads about us screen.
      */
-    public void AboustUsPanel() {
+    public void aboustUsScreen() {
 
     }
-   /**
-     * Loads services panel
-     */
-    public void ServicesPanel() {
 
-    }
     /**
-     * Loads support panel
+     * Loads services screen
      */
-    public void SupportPanel() {
+    public void servicesScreen() {
 
     }
+
     /**
-     * Loads contact us panel
+     * Loads support screen
      */
-    public void ContactUsPanel() {
+    public void supportScreen() {
 
     }
 
+    /**
+     * Loads contact us screen
+     */
+    public void contactUsScreen() {
+
     }
+
+}
