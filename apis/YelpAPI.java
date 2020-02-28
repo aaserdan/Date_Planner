@@ -2,7 +2,7 @@ package apis;
 
 /** Class used to make calls to the Yelp API given data from the YelpAdapter
  *
- * Last updated February 24 2020
+ * Last updated February 26 2020
  * @Author Alejandro
  */
 
@@ -50,15 +50,19 @@ public class YelpAPI {
             //Response code used for debugging
             System.out.println("Yelp API Response Code: " + status + " ---> SHOWN DURING DEBUG");
 
-            BufferedReader inputStream = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String inputLine;
-            StringBuilder content = new StringBuilder();
+            /* Grabs the response from the API and appends it to the content variable
+               until it's empty                                                    */
+            StringBuilder content;
+            try (BufferedReader inputStream = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                String inputLine;
+                content = new StringBuilder();
 
-            //Appends all of the data to the inputLine until there is no more data
-            while ((inputLine = inputStream.readLine()) != null) {
-                content.append(inputLine);
+                //Appends all of the data to the inputLine until there is no more data
+                while ((inputLine = inputStream.readLine()) != null) {
+                    content.append(inputLine);
+                }
             }
-            inputStream.close();
+            // Closing the connection after the response has been saved
             connection.disconnect();
 
             // Saves API response into an object

@@ -29,7 +29,7 @@ public class WeatherAPI {
         String baseURL = "http://api.openweathermap.org";
         String callAction = "/data/2.5/weather?q=";
 
-        //Build the URL
+        // Build the URL
         String urlString = baseURL + callAction + _zipCode + "," + _country + "&appid=" + API_keys.openWeatherMapAPI();
         URL url;
 
@@ -40,21 +40,25 @@ public class WeatherAPI {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
-            //Prints the respone code
+            // Prints the respone code (USED FOR DEBUGGING)
             int status = connection.getResponseCode();
 
             //Response code used for debugging
             System.out.println("Weather API Response Code: " + status + " ---> SHOWN DURING DEBUG");
 
-            BufferedReader inputStream = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String inputLine;
-            StringBuilder content = new StringBuilder();
+            /* Grabs the response from the API and appends it to the content variable
+               until it's empty                                                    */
+            StringBuilder content;
+            try (BufferedReader inputStream = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                String inputLine;
+                content = new StringBuilder();
 
-            //Appends all of the data to the input line until there is no more data
-            while ((inputLine = inputStream.readLine()) != null) {
-                content.append(inputLine);
+                //Appends all of the data to the input line until there is no more data
+                while ((inputLine = inputStream.readLine()) != null) {
+                    content.append(inputLine);
+                }
             }
-            inputStream.close();
+            // Closing the connection after the response has been saved
             connection.disconnect();
 
             // Saving the data into an object

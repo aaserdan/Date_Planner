@@ -21,7 +21,6 @@ public class test {
     public void homeScreen() {
 
     }
-
     /**
      * Loads about us screen.
      */
@@ -49,5 +48,4 @@ public class test {
     public void contactUsScreen() {
 
     }
-
 }

@@ -18,15 +18,18 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        // Creating a new user from the 'database'
         User model1 = userFromDatabase();
         UserView view1 = new UserView();
 
     //  User model2 = user2FromDatabase();
     //  UserView view2 = new UserView();
 
+        // Creating a controller for the user
         UserController controller1 = new UserController(model1, view1);
     //  UserController controller2 = new UserController(model2, view2);
 
+        // Outputting the data and results using the controller
         controller1.updateView();
     //  controller2.updateView();
     }
@@ -42,7 +45,7 @@ public class Main {
         user1.setCountryCode("us");
         user1.setTerm("pasta");
         user1.setSearchLimitYelp(3);
-        user1.setZipCode(27403);
+        user1.setZipCode(27513);
 
         return user1;
     }
