@@ -1,18 +1,18 @@
 package main;
 
 /*
- * Our ontroller for the application, job of this class is to load screens and
+ * Our controller for the application, job of this class is to load screens and
  * send user to certain screens depending on GUI commands.
  *
  * @author nimrasami
  */
-import gui.test;
+import gui.Test;
 import javafx.stage.Stage;
 
 class MainController {
 
     //Lets the controller know of the test file, so that different screens could could be accessed based on selections.
-    protected test gui;
+    protected Test gui;
 
     /**
      * Constructor to create the BeginController
@@ -20,9 +20,9 @@ class MainController {
      * @param primaryStage - Will be used in AppGui class to help build the GUI
      * for the user.
      */
-    MainController(Stage primaryStage) {
+    MainController(Stage _primaryStage) {
         // Creates stage for the AppGui to show.
-        this.gui = new test(primaryStage);
+        this.gui = new Test(_primaryStage);
     }
 
     /**
@@ -40,11 +40,13 @@ class MainController {
     }
 
     /**
+     * I might delete the services screen
      * This method is a controller for services screen.
-     */
+     
     private void servicesScreen() {
         this.gui.servicesScreen();
     }
+    */
 
     /**
      * This method is a controller for support screen.

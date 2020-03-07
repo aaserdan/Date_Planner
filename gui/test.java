@@ -6,13 +6,13 @@ package gui;
  *
  * Last updated March 2 2020
  *
- * @author Nimra
+ * @author Nimra 
  */
 import javafx.scene.Scene;
 import controllers.UserController;
 import javafx.stage.Stage;
 
-public class test {
+public class Test {
 
     // Giving access to models so they could display the information.
     private final UserController usercontroler = new UserController();
@@ -20,10 +20,10 @@ public class test {
 
     /**
      *
-     * @param primaryStage - Stage passed in from BeginController class.
+     * @param _primaryStage - Stage passed in from BeginController class.
      */
-    public test(Stage primaryStage) {
-        this.stage = primaryStage;
+    public Test(Stage _primaryStage) {
+        this.stage = _primaryStage;
 
     }
 
@@ -48,14 +48,16 @@ public class test {
     }
 
     /**
+     * I might delete the services screen
      * Loads services screen
-     */
+     
     public void servicesScreen() {
         Scene scene = this.buildservicesScreen();
         this.stage.setTitle("Services");
         this.stage.setScene(scene);
         this.stage.show();
     }
+    */
 
     /**
      * Loads support screen
@@ -89,10 +91,12 @@ public class test {
     private Scene buildaboustUsScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    /**
+     * I might delete the services screen
     private Scene buildservicesScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    */
 
     private Scene buildsupportScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -103,4 +107,3 @@ public class test {
     }
 
 }
-
