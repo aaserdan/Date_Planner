@@ -6,7 +6,7 @@ package gui;
  *
  * Last updated March 2 2020
  *
- * @author Nimra 
+ * @author Nimra
  */
 import javafx.scene.Scene;
 import controllers.UserController;
@@ -48,18 +48,6 @@ public class Test {
     }
 
     /**
-     * I might delete the services screen
-     * Loads services screen
-     
-    public void servicesScreen() {
-        Scene scene = this.buildservicesScreen();
-        this.stage.setTitle("Services");
-        this.stage.setScene(scene);
-        this.stage.show();
-    }
-    */
-
-    /**
      * Loads support screen
      */
     public void supportScreen() {
@@ -91,12 +79,12 @@ public class Test {
     private Scene buildaboustUsScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
     /**
-     * I might delete the services screen
-    private Scene buildservicesScreen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    */
+     * I might delete the services screen private Scene buildservicesScreen() {
+     * throw new UnsupportedOperationException("Not supported yet."); //To
+     * change body of generated methods, choose Tools | Templates. }
+     */
 
     private Scene buildsupportScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

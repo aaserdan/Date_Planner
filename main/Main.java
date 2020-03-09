@@ -1,68 +1,72 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package main;
 
-/** Our temporary main file for the program that is used for testing the code
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+/**
  *
- * Last updated February 24 2020
- * @Author Alejandro, @Author Arturo, @Author Nimra
+ * @author artur
  */
+public class Main extends Application {
+    /*
+    @Override
+    public void start(Stage primaryStage) {
+        Button btn = new Button();
+        btn.setText("Say 'Hello World'");
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Hello World!");
+            }
+        });
+        
+        StackPane root = new StackPane();
+        root.getChildren().add(btn);
+        
+        Scene scene = new Scene(root, 300, 250);
+        
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    */
+    /**
+     * @param args the command line arguments
+     */
+    /*
+    public static void main(String[] args) {
+        launch(args);
+    }
+    */
+    
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+        
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.show();
+    }
 
-import models.*;
-import views.*;
-import controllers.*;
-
-public class Main {
-
-    /** Main method that runs the program
-     *
-     * @param args
+    /**
+     * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        // Creating a new user from the 'database'
-        User model1 = userFromDatabase();
-        UserView view1 = new UserView();
-
-    //  User model2 = user2FromDatabase();
-    //  UserView view2 = new UserView();
-
-        // Creating a controller for the user
-        UserController controller1 = new UserController(model1, view1);
-    //  UserController controller2 = new UserController(model2, view2);
-
-        // Outputting the data and results using the controller
-        controller1.updateView();
-    //  controller2.updateView();
-    }
-
-    /** Temporary 'database' for user 1 to test the application
-     *
-     * @return user1 data
-     */
-    private static User userFromDatabase() {
-        User user1 = new User();
-        user1.setName("Alex");
-        user1.setCity("greensboro");
-        user1.setCountryCode("us");
-        user1.setTerm("pasta");
-        user1.setSearchLimitYelp(3);
-        user1.setZipCode(27513);
-
-        return user1;
-    }
-
-    /** Temporary 'database' for user 2 to test the application
-     *
-     * @return user2 data
-     */
-    private static User user2FromDatabase() {
-        User user2 = new User();
-        user2.setName("Myra");
-        user2.setCity("raleigh");
-        user2.setCountryCode("us");
-        user2.setTerm("dinner");
-        user2.setSearchLimitYelp(5);
-        user2.setZipCode(27513);
-
-        return user2;
+        launch(args);
     }
 }
