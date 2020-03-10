@@ -1,12 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
+/**
+ * This class is the main class it is used to start the application
+ *
+ * Last updated March 10 2020
+ *
+ * @author nimrasami
+ */
+import java.io.IOException;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -16,57 +18,33 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
- *
- * @author artur
- */
 public class Main extends Application {
-    /*
-    @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-    */
-    /**
-     * @param args the command line arguments
-     */
-    /*
-    public static void main(String[] args) {
-        launch(args);
-    }
-    */
-    
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
-    }
 
     /**
-     * @param args the command line arguments
+     * Starts application and takes it to first page.
      */
+    @Override
+    public void start(Stage _primaryStage) throws IOException {
+
+        //This is to load the GUI from primary.xml
+        Parent root = FXMLLoader.load(getClass().getResource("/views/gui.fxml"));
+
+        //This is to add elements to the scene
+        Scene primaryScene = new Scene(root);
+
+        //This will set the title
+        _primaryStage.setTitle("Date Planner");
+
+        //This is to set the primary scene
+        _primaryStage.setScene(primaryScene);
+
+        //This is to display the window
+        _primaryStage.show();
+    }
+
     public static void main(String[] args) {
         launch(args);
+        System.out.println("test");
     }
+
 }
