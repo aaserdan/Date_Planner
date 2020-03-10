@@ -31,7 +31,7 @@ public class Main {
 
     /** Temporary 'database' for user 1 to test the application
      *
-     * @return user1 data
+     * @return user1
      */
     private static User userFromDatabase() {
         User user1 = new User();
