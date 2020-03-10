@@ -2,7 +2,7 @@ package main;
 
 /** Our temporary main file for the program that is used for testing the code
  *
- * Last updated February 24 2020
+ * Last updated March 9 2020
  * @Author Alejandro, @Author Arturo, @Author Nimra
  */
 
@@ -20,7 +20,7 @@ public class Main {
 
         // Creating a new user from the 'database'
         User model1 = userFromDatabase();
-        UserView view1 = new UserView();
+        UserViewTEST view1 = new UserViewTEST();
 
         // Creating a controller for the user
         UserController controller1 = new UserController(model1, view1);

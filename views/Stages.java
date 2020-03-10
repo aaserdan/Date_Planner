@@ -1,10 +1,10 @@
-package gui;
+package views;
 
 /**
  * Class to display GUI to the user
  *
  *
- * Last updated March 2 2020
+ * Last updated March 9 2020
  *
  * @author Nimra
  */
@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import controllers.UserController;
 import javafx.stage.Stage;
 
-public class Test {
+public class Stages {
 
     // Giving access to models so they could display the information.
     private final UserController usercontroler = new UserController();
@@ -22,7 +22,7 @@ public class Test {
      *
      * @param _primaryStage - Stage passed in from BeginController class.
      */
-    public Test(Stage _primaryStage) {
+    public Stages(Stage _primaryStage) {
         this.stage = _primaryStage;
 
     }
