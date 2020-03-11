@@ -12,14 +12,14 @@ import views.*;
 
 public class UserController {
     private final User model;
-    private final UserView view;
+    private final UserViewTEST view;
 
     /** Creates the controller for the model & view
      *
      * @param _model
      * @param _view
      */
-    public UserController(User _model, UserView _view){
+    public UserController(User _model, UserViewTEST _view){
         this.model = _model;
         this.view = _view;
     }
