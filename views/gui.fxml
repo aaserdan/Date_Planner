@@ -1,49 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="552.0" prefWidth="663.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.GuiController">
-    <stylesheets>
-        <URL value="@gui.css" />
-    </stylesheets>
-   <children>
-      <TabPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="552.0" prefWidth="663.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Contact Us">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="mainFxmlClass" stylesheets="@../Resources/gui.css" />
-            </content>
-          </Tab>
-          <Tab text="About Us">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="mainFxmlClass" stylesheets="@../Resources/gui.css" />
-            </content>
-          </Tab>
-            <Tab text="Plan">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="mainFxmlClass" stylesheets="@../Resources/gui.css" />
-              </content>
-            </Tab>
-            <Tab text="Home">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="mainFxmlClass" stylesheets="@../Resources/gui.css">
-                     <children>
-                        <ImageView fitHeight="203.0" fitWidth="253.0" layoutX="190.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="272.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="44.0">
-                           <image>
-                              <Image url="@../Resources/Logo.jpeg" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="239.0" layoutY="260.0" mnemonicParsing="false" text="Plan a date as unique as you!" />
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <TabPane prefHeight="402.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@../Resources/gui.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Home">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="193.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resources/Logo.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Button fx:id="k" layoutX="199.0" layoutY="205.0" mnemonicParsing="false" text="Plan a date as unique as you!" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Plan">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="610.0">
+                            <children>
+                                <GridPane layoutX="157.0" layoutY="97.0" prefHeight="226.0" prefWidth="316.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <TextField alignment="CENTER" text="Partner One" GridPane.columnIndex="1" />
+                                        <TextField alignment="CENTER" text="Partner Two" GridPane.columnIndex="2" />
+                                        <TextField alignment="CENTER" text="Setting:" GridPane.rowIndex="1" />
+                                        <TextField alignment="CENTER" text="Cuisine:" GridPane.rowIndex="2" />
+                                        <TextField alignment="CENTER" text="Location/ Distance:" GridPane.rowIndex="3" />
+                                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <ChoiceBox prefWidth="116.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                    </children>
+                                </GridPane>
+                                <ImageView fitHeight="99.0" fitWidth="143.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resources/Logo.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <TextField layoutX="171.0" layoutY="45.0" prefHeight="27.0" prefWidth="237.0" text="Date Planner for dates as unique as you!" />
+                                <Button layoutX="477.0" layoutY="326.0" mnemonicParsing="false" text="Click for Results:" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Results">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+                <Tab text="About Us ">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField alignment="CENTER" layoutX="14.0" layoutY="120.0" prefHeight="27.0" prefWidth="133.0" text="About Us:" />
+                                <TextArea layoutX="187.0" layoutY="120.0" prefHeight="128.0" prefWidth="291.0" text=" As three young college students, we often find it hard to  plan out a perfect date. We realize that there are thousands of students across the United States just like us, so by creating this website we hope to ease this problem for not only young college students but everyone out there." wrapText="true" />
+                                <Separator layoutX="165.0" layoutY="120.0" orientation="VERTICAL" prefHeight="128.0" prefWidth="1.0" />
+                                <ImageView fitHeight="99.0" fitWidth="143.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resources/Logo.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <TextField layoutX="171.0" layoutY="45.0" prefHeight="27.0" prefWidth="237.0" text="Date Planner for dates as unique as you!" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Support">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fitHeight="99.0" fitWidth="143.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resources/Logo.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <TextField layoutX="171.0" layoutY="45.0" prefHeight="27.0" prefWidth="237.0" text="Date Planner for dates as unique as you!" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Contact">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fitHeight="99.0" fitWidth="143.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resources/Logo.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <TextField layoutX="171.0" layoutY="45.0" prefHeight="27.0" prefWidth="237.0" text="Date Planner for dates as unique as you!" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </top>
+</BorderPane>

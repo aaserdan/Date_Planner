@@ -3,7 +3,7 @@
  *
  * Last updated March 10 2020
  *
- * @author nimrasami
+ * @author Nimra
  */
 package main;
 
@@ -34,7 +34,7 @@ public class GuiController extends Application {
         Scene scene = new Scene(root);
 
         _primaryStage.setScene(scene);
-        
+
         //This is to display the window
         _primaryStage.show();
 
