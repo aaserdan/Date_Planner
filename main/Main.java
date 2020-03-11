@@ -1,12 +1,13 @@
 package main;
 
-
 /**
  * This class is the main class it is used to start the application
  *
  * Last updated March 10 2020
  *
- * @author Nimra, ALejandro, Arturo
+ * @author Nimra
+ * @author Alejandro
+ * @author Arturo
  */
 import java.io.IOException;
 import javafx.application.Application;
@@ -48,7 +49,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);
 
         // Creating a new user from the 'database'
         User model1 = userFromDatabase();
@@ -59,9 +59,12 @@ public class Main extends Application {
 
         // Outputting the data and results using the controller
         controller1.updateView();
+
+        // Launching the GUI last in order to show the test results first!
+        launch(args);
     }
 
-    /** Temporary 'database' for user 1 to test the application
+    /** Temporary 'database' for user 1 used to test the application
      *
      * @return user1
      */
