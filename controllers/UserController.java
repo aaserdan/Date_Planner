@@ -94,12 +94,12 @@ public class UserController {
 
     // Grabs the restaurant data from the Yelp API
     public void getRestaurants() {
-        apis.YelpAPI.findRestaurants(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
+        apis.adapters.YelpAPIAdapter.getRestaurant(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
     }
 
     // Grabs the weather data from the API
     public void getWeather() {
-        apis.WeatherAPI.getWeather(model.getZipCode(), model.getCountryCode());
+        apis.adapters.WeatherAPIAdapter.getWeatherInfo(model.getZipCode(), model.getCountryCode());
     }
 
     /** Grabs the name of the user
