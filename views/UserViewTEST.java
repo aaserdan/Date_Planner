@@ -7,7 +7,7 @@ package views;
  * @Author Alejandro
  */
 
-public class UserView {
+public class UserViewTEST {
 
     /** Method that outputs the results to the user. Use this to modify the
      * output to the console.

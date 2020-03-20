@@ -1,5 +1,6 @@
 package main;
 
+
 /**
  * This class is the main class it is used to start the application
  *
@@ -16,6 +17,7 @@ import javafx.stage.Stage;
 import models.*;
 import views.*;
 import controllers.*;
+
 
 public class Main extends Application {
 
@@ -49,7 +51,7 @@ public class Main extends Application {
 
         // Creating a new user from the 'database'
         User model1 = userFromDatabase();
-        UserView view1 = new UserView();
+        UserView view1 = new UserView()
 
         // Creating a controller for the user
         UserController controller1 = new UserController(model1, view1);
@@ -58,10 +60,9 @@ public class Main extends Application {
         controller1.updateView();
     }
 
-    /**
-     * Temporary 'database' for user 1 to test the application
+    /** Temporary 'database' for user 1 to test the application
      *
-     * @return user1 data
+     * @return user1
      */
     private static User userFromDatabase() {
         User user1 = new User();
