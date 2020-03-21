@@ -11,13 +11,9 @@ package main;
  */
 import java.io.IOException;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import models.*;
 import views.*;
@@ -27,24 +23,27 @@ import controllers.*;
 public class Main extends Application {
 
     /**
-     * Starts application and takes it to first page.
+     * Starts application and opens to first window/stage.
+     *
+     * @param _primaryStage
+     * @throws java.io.IOException
      */
     @Override
     public void start(Stage _primaryStage) throws IOException {
 
-        //This is to load the GUI from primary.xml
-        Parent root = FXMLLoader.load(getClass().getResource("/views/gui.fxml"));
+        // To load GUI from primary.xml
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/HomeScene.fxml"));
 
-        //This is to add elements to the scene
-        Scene primaryScene = new Scene(root);
+        // To add elements to scene
+        Scene _primaryScene = new Scene(root);
 
-        //This will set the title
+        // To set title
         _primaryStage.setTitle("Date Planner");
 
-        //This is to set the primary scene
-        _primaryStage.setScene(primaryScene);
+        // To set the primary scene
+        _primaryStage.setScene(_primaryScene);
 
-        //This is to display the window
+        // To display
         _primaryStage.show();
     }
 
