@@ -5,7 +5,9 @@ package main;
  *
  * Last updated March 10 2020
  *
- * @author Nimra, ALejandro, Arturo
+ * @author Nimra
+ * @author Alejandro
+ * @author Arturo
  */
 import java.io.IOException;
 import javafx.application.Application;
@@ -50,6 +52,7 @@ public class Main extends Application {
         User model1 = userFromDatabase();
         UserViewTEST view1 = new UserViewTEST();
 
+
         // Creating a controller for the user
         UserController controller1 = new UserController(model1, view1);
 
@@ -59,6 +62,7 @@ public class Main extends Application {
         // Launching the GUI last in order to show the test results first!
         launch(args);
     }
+
 
     /**
      * Temporary 'database' for user 1 to test the application

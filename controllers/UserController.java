@@ -12,14 +12,14 @@ import views.*;
 
 public class UserController {
     private final User model;
-    private final UserViewTEST view;
+    private final UserView view;
 
     /** Creates the controller for the model & view
      *
      * @param _model
      * @param _view
      */
-    public UserController(User _model, UserViewTEST _view){
+    public UserController(User _model, UserView _view){
         this.model = _model;
         this.view = _view;
     }
@@ -94,12 +94,12 @@ public class UserController {
 
     // Grabs the restaurant data from the Yelp API
     public void getRestaurants() {
-        apis.YelpAPI.findRestaurants(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
+        apis.adapters.YelpAPIAdapter.getRestaurant(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
     }
 
     // Grabs the weather data from the API
     public void getWeather() {
-        apis.WeatherAPI.getWeather(model.getZipCode(), model.getCountryCode());
+        apis.adapters.WeatherAPIAdapter.getWeatherInfo(model.getZipCode(), model.getCountryCode());
     }
 
     /** Grabs the name of the user
