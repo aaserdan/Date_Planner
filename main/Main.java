@@ -19,7 +19,6 @@ import models.*;
 import views.*;
 import controllers.*;
 
-
 public class Main extends Application {
 
     /**
@@ -51,7 +50,8 @@ public class Main extends Application {
 
         // Creating a new user from the 'database'
         User model1 = userFromDatabase();
-        UserView view1 = new UserView();
+        UserViewTEST view1 = new UserViewTEST();
+
 
         // Creating a controller for the user
         UserController controller1 = new UserController(model1, view1);
@@ -63,7 +63,9 @@ public class Main extends Application {
         launch(args);
     }
 
-    /** Temporary 'database' for user 1 used to test the application
+
+    /**
+     * Temporary 'database' for user 1 to test the application
      *
      * @return user1
      */

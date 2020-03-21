@@ -3,7 +3,7 @@ package main;
 /**
  * This class serves as the controller for home screen
  *
- * Last updated 3/10/2020
+ * Last updated March 20 2020
  *
  * @author Nimra
  */
@@ -22,7 +22,7 @@ import javafx.scene.Node;
 /**
  * FXML Controller class
  *
- * @author nimrasami
+ *
  */
 public class guiController implements Initializable {
 
