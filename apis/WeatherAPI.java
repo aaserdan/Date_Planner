@@ -1,12 +1,13 @@
 package apis;
 
-/** Weather API class
- * Class used to make calls to the WeatherAPI given data from the WeatherAdapter
+/**
+ * Weather API class Class used to make calls to the WeatherAPI given data from
+ * the WeatherAdapter
  *
  * Last updated February 24 2020
+ *
  * @Author Arturo
  */
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,8 +18,8 @@ import java.util.logging.Logger;
 import org.json.*;
 
 public class WeatherAPI {
-    
-      /**
+
+    /**
      * Method used to grab data from the weather API
      *
      * @param _zipCode zip code where the user is located
@@ -64,10 +65,10 @@ public class WeatherAPI {
 
             // Saving the data into an object
             JSONObject obj = new JSONObject(content.toString());
-            
+
             // Calls to helper method to print out the weather information from JSONObjer obj
             printWeatherInf(obj);
-            
+
         } catch (IOException | JSONException ex) {
             Logger.getLogger(WeatherAPI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -83,7 +84,7 @@ public class WeatherAPI {
         int tempCelsius = (int) (Math.ceil((_temp - 273.15)));
         return tempCelsius;
     }
-    
+
     /**
      * Method used to convert Kelvin to Fahrenheit
      *
@@ -94,29 +95,29 @@ public class WeatherAPI {
         int tempFahrenheit = (int) (((_temp - 273.15) * 1.8) + 32);
         return tempFahrenheit;
     }
-    
+
     /**
      * Method to extract components for the weather from the JSON Object
      *
-     * @param  _obj contains information from API to be extracted
+     * @param _obj contains information from API to be extracted
      */
-    public static void printWeatherInf(JSONObject _obj){
-            try {
-                // Extracting the main object from the response for the temperature
-                JSONObject mainObj = _obj.getJSONObject("main");
-                int currentTemp = mainObj.getInt("temp");
+    public static void printWeatherInf(JSONObject _obj) {
+        try {
+            // Extracting the main object from the response for the temperature
+            JSONObject mainObj = _obj.getJSONObject("main");
+            int currentTemp = mainObj.getInt("temp");
 
-                // Calls to convert temperature into Celcius and Fahrenheit & prints out
-                System.out.println("Current Temperature: " + toFahrenheit(currentTemp) + " F");
-                System.out.println("Current Tempemrature: " + toCelsius(currentTemp) + " C");
-                //Extracting the weather array for the weather description
-                JSONArray jsonArray = _obj.getJSONArray("weather");
-                JSONObject weatherDescription = jsonArray.getJSONObject(0);
-                String weatherDesc = weatherDescription.getString("description");
-                System.out.println("Weather Description: " + weatherDesc + "\n");
-                
+            // Calls to convert temperature into Celcius and Fahrenheit & prints out
+            System.out.println("Current Temperature: " + toFahrenheit(currentTemp) + " F");
+            System.out.println("Current Tempemrature: " + toCelsius(currentTemp) + " C");
+            //Extracting the weather array for the weather description
+            JSONArray jsonArray = _obj.getJSONArray("weather");
+            JSONObject weatherDescription = jsonArray.getJSONObject(0);
+            String weatherDesc = weatherDescription.getString("description");
+            System.out.println("Weather Description: " + weatherDesc + "\n");
+
         } catch (JSONException ex) {
             Logger.getLogger(WeatherAPI.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }
 }

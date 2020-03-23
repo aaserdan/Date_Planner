@@ -1,11 +1,12 @@
 package apis;
 
-/** Class used to make calls to the Yelp API given data from the YelpAdapter
+/**
+ * Class used to make calls to the Yelp API given data from the YelpAdapter
  *
  * Last updated February 26 2020
+ *
  * @Author Alejandro
  */
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,8 +18,9 @@ import org.json.*;
 
 public class YelpAPI {
 
-    /** Method that makes a API call to the Yelp API for a list of restaurants
-     * in the location given by the user
+    /**
+     * Method that makes a API call to the Yelp API for a list of restaurants in
+     * the location given by the user
      *
      * @param _term breakfast, lunch, or dinner, etc.
      * @param _city city where user is located
