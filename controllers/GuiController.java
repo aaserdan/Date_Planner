@@ -1,7 +1,7 @@
-package main;
+package controllers;
 
 /**
- * This class serves as the controller for home screen
+ * This class serves as the controller for all of the screens
  *
  * Last updated March 20 2020
  *
@@ -18,18 +18,42 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 
 /**
  * FXML Controller class
  *
  *
  */
-public class guiController implements Initializable {
+public class GuiController implements Initializable {
 
     //FXML loader
+    //Image for background
     @FXML
     private ImageView background;
 
+    //Buttons to gor from one scene to another
+    @FXML
+    private Button dateButton;
+
+    @FXML
+    private Button resultsButton;
+
+    //Combobox for setting of partner one
+    @FXML
+    protected ComboBox<String> settingP1ComboBox;
+
+    //Combobox for setting of partner two
+    @FXML
+    protected ComboBox<String> settingP2ComboBox;
+
+    /**
+     * Changes from home screen to plan screen
+     *
+     * @param _event
+     * @throws java.lang.Exception
+     */
     public void changeToPlanScreen(ActionEvent _event) throws Exception {
 
         //new FXML loader and scene for new screen
@@ -42,6 +66,12 @@ public class guiController implements Initializable {
         appStage.show();
     }
 
+    /**
+     * Changes from plan screen to results screen
+     *
+     * @param _event
+     * @throws java.lang.Exception
+     */
     public void changeToResultsScreen(ActionEvent _event) throws Exception {
 
         //new FXML loader and scene for new screen
@@ -54,17 +84,6 @@ public class guiController implements Initializable {
         rStage.show();
     }
 
-    /*private void changeToScreen(ActionEvent _event) throws IOException {
-        //new FXML loader and scene for new screen
-        Parent plan = FXMLLoader.load(getClass().getResource("/GUI/Views/ResultsScene.fxml"));
-        Scene planScene = new Scene(plan);
-
-        //Get information from primary stage
-        Stage appStage = (Stage) ((Node) _event.getSource()).getScene().getWindow();
-        appStage.setScene(planScene);
-        appStage.show();
-    }
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

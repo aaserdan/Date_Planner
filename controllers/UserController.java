@@ -1,37 +1,34 @@
 package controllers;
 
-/** Controller used to manipulate the users data and make calls to the
- *  appropriate models and views
+/**
+ * Controller used to manipulate the users data and make calls to the
+ * appropriate models and views
  *
  * Last updated February 27 2020
+ *
  * @Author Alejandro
  */
-
 import models.*;
 import views.*;
 
 public class UserController {
+
     private final User model;
     private final UserView view;
 
-    /** Creates the controller for the model & view
+    /**
+     * Creates the controller for the model & view
      *
      * @param _model
      * @param _view
      */
-    public UserController(User _model, UserView _view){
+    public UserController(User _model, UserView _view) {
         this.model = _model;
         this.view = _view;
     }
 
-    /** Controller temporarily for the GUI
-     *
-     */
-    public UserController() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    /** Updates the view that outputs the data
+    /**
+     * Updates the view that outputs the data
      *
      */
     public void updateView() {
@@ -41,8 +38,8 @@ public class UserController {
     }
 
     //======================== SETTERS ========================
-
-    /** Sets the name for the model
+    /**
+     * Sets the name for the model
      *
      * @param _name
      */
@@ -50,7 +47,8 @@ public class UserController {
         model.setName(_name);
     }
 
-    /** Sets the city for the model
+    /**
+     * Sets the city for the model
      *
      * @param _city
      */
@@ -58,7 +56,8 @@ public class UserController {
         model.setCity(_city);
     }
 
-    /** Sets the term for the model
+    /**
+     * Sets the term for the model
      *
      * @param _term
      */
@@ -66,7 +65,8 @@ public class UserController {
         model.setTerm(_term);
     }
 
-    /** Sets the zip code for the model
+    /**
+     * Sets the zip code for the model
      *
      * @param _zipcode
      */
@@ -74,7 +74,8 @@ public class UserController {
         model.setZipCode(_zipcode);
     }
 
-    /** Sets the country code for the model
+    /**
+     * Sets the country code for the model
      *
      * @param _countryCode
      */
@@ -82,7 +83,8 @@ public class UserController {
         model.setCountryCode(_countryCode);
     }
 
-    /** Sets the Yelp search limit for the model
+    /**
+     * Sets the Yelp search limit for the model
      *
      * @param _searchLimit
      */
@@ -91,7 +93,6 @@ public class UserController {
     }
 
     //======================== GETTERS ========================
-
     // Grabs the restaurant data from the Yelp API
     public void getRestaurants() {
         apis.adapters.YelpAPIAdapter.getRestaurant(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
@@ -102,7 +103,8 @@ public class UserController {
         apis.adapters.WeatherAPIAdapter.getWeatherInfo(model.getZipCode(), model.getCountryCode());
     }
 
-    /** Grabs the name of the user
+    /**
+     * Grabs the name of the user
      *
      * @return name
      */
@@ -110,7 +112,8 @@ public class UserController {
         return model.getName();
     }
 
-    /** Grabs the city of the model
+    /**
+     * Grabs the city of the model
      *
      * @return city
      */
@@ -118,7 +121,8 @@ public class UserController {
         return model.getCity();
     }
 
-    /** Grabs the term of the model
+    /**
+     * Grabs the term of the model
      *
      * @return term
      */
@@ -126,7 +130,8 @@ public class UserController {
         return model.getTerm();
     }
 
-    /** Grabs the zip code given to the model
+    /**
+     * Grabs the zip code given to the model
      *
      * @return zipCode
      */
@@ -134,7 +139,8 @@ public class UserController {
         return model.getZipCode();
     }
 
-    /** Grabs the country code given to the model
+    /**
+     * Grabs the country code given to the model
      *
      * @return countryCode
      */
@@ -142,7 +148,8 @@ public class UserController {
         return model.getCountryCode();
     }
 
-    /** Grabs the Yelp search limit given to the model
+    /**
+     * Grabs the Yelp search limit given to the model
      *
      * @return searchLmit
      */

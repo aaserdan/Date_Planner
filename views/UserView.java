@@ -1,15 +1,16 @@
 package views;
 
-/** View for the user information and requested data
+/**
+ * View for the user information and requested data
  *
  * Last updated February 19 2020
  *
  * @Author Alejandro
  */
-
 public class UserView {
 
-    /** Method that outputs the results to the user. Use this to modify the
+    /**
+     * Method that outputs the results to the user. Use this to modify the
      * output to the console.
      *
      * @param _name name of the user

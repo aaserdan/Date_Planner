@@ -1,14 +1,17 @@
 package apis;
 
-/** Class used to store the API keys used for the Date Planner application
+/**
+ * Class used to store the API keys used for the Date Planner application
  *
  * Last updated February 16 2020
- * @Author Alejandro, @Author Arturo
+ *
+ * @Author Alejandro
+ * @Author Arturo
  */
-
 public class API_keys {
 
-    /** Method used to store the weather API key (Arturo's Key)
+    /**
+     * Method used to store the weather API key (Arturo's Key)
      *
      * @return API key for the weather API
      */
@@ -18,7 +21,8 @@ public class API_keys {
         return api_key;
     }
 
-    /** Method used to store the Yelp API key (Alejandro's Key)
+    /**
+     * Method used to store the Yelp API key (Alejandro's Key)
      *
      * @return the API key for the Yelp API
      */

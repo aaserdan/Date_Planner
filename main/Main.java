@@ -52,7 +52,6 @@ public class Main extends Application {
         User model1 = userFromDatabase();
         UserView view1 = new UserView();
 
-
         // Creating a controller for the user
         UserController controller1 = new UserController(model1, view1);
 
@@ -62,7 +61,6 @@ public class Main extends Application {
         // Launching the GUI last in order to show the test results first!
         launch(args);
     }
-
 
     /**
      * Temporary 'database' for user 1 to test the application

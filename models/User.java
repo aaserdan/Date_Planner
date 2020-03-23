@@ -17,8 +17,8 @@ public class User {
     private int searchLimitYelp;
 
     //======================== GETTERS ========================
-
-    /** Grabs the name of the user
+    /**
+     * Grabs the name of the user
      *
      * @return name
      */
@@ -26,7 +26,8 @@ public class User {
         return this.name;
     }
 
-    /** Grabs the city the user gave
+    /**
+     * Grabs the city the user gave
      *
      * @return city
      */
@@ -34,7 +35,8 @@ public class User {
         return this.city;
     }
 
-    /** Grabs the term the user gave
+    /**
+     * Grabs the term the user gave
      *
      * @return term
      */
@@ -42,7 +44,8 @@ public class User {
         return this.term;
     }
 
-    /** Grabs the zip code the user gave
+    /**
+     * Grabs the zip code the user gave
      *
      * @return zip code
      */
@@ -50,7 +53,8 @@ public class User {
         return this.zipCode;
     }
 
-    /** Grabs the country code the user gave (Default set to 'US')
+    /**
+     * Grabs the country code the user gave (Default set to 'US')
      *
      * @return country code
      */
@@ -58,7 +62,8 @@ public class User {
         return this.countryCode;
     }
 
-    /** Grabs the yelp search limit user gave
+    /**
+     * Grabs the yelp search limit user gave
      *
      * @return
      */
@@ -67,8 +72,8 @@ public class User {
     }
 
     //======================== SETTERS ========================
-
-    /** Sets the name given by the user
+    /**
+     * Sets the name given by the user
      *
      * @param _name
      */
@@ -76,7 +81,8 @@ public class User {
         this.name = _name;
     }
 
-    /** Sets the city given by the user
+    /**
+     * Sets the city given by the user
      *
      * @param _city
      */
@@ -84,7 +90,8 @@ public class User {
         this.city = _city;
     }
 
-    /** Sets the term given by the user
+    /**
+     * Sets the term given by the user
      *
      * @param _term
      */
@@ -92,7 +99,8 @@ public class User {
         this.term = _term;
     }
 
-    /** Sets the zip code given by the user
+    /**
+     * Sets the zip code given by the user
      *
      * @param _zipCode
      */
@@ -100,7 +108,8 @@ public class User {
         this.zipCode = _zipCode;
     }
 
-    /** Sets the country given by the user
+    /**
+     * Sets the country given by the user
      *
      * @param _countryCode
      */
@@ -108,7 +117,8 @@ public class User {
         this.countryCode = _countryCode;
     }
 
-    /** Sets the search limit for Yelp given by the user
+    /**
+     * Sets the search limit for Yelp given by the user
      *
      * @param _searchLimitYelp
      */
