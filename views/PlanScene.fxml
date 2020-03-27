@@ -15,8 +15,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GuiController">
-    <left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PlanSceneController">
+ <left>
         <TabPane prefHeight="400.0" prefWidth="618.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
             <tabs>
                 <Tab text="Plan">
@@ -28,7 +28,7 @@
                                         <Image url="@../Resources/Logo.jpeg" />
                                     </image>
                                 </ImageView>
-                                <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner  for dates as unique as you!">
+                                <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner for dates as unique as you!">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
@@ -44,19 +44,23 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
                                         <TextField alignment="CENTER" text="Partner One" GridPane.columnIndex="1" />
                                         <TextField alignment="CENTER" text="Partner Two" GridPane.columnIndex="2" />
                                         <TextField alignment="CENTER" text="Setting" GridPane.rowIndex="1" />
                                         <TextField alignment="CENTER" text="Cuisine" GridPane.rowIndex="2" />
-                                        <TextField alignment="CENTER" text="Location/ Distance" GridPane.rowIndex="3" />
-                                        <ComboBox prefWidth="150.0" promptText="Choose" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                        <ComboBox prefWidth="150.0" promptText="Choose" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                        <ComboBox prefWidth="150.0" promptText="Choose" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                        <ComboBox prefWidth="150.0" promptText="Choose" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                        <ComboBox prefWidth="150.0" promptText="Choose" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                        <ComboBox prefWidth="150.0" promptText="Choose" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                        <TextField alignment="CENTER" text="Distance" GridPane.rowIndex="3" />
+                                        <TextField alignment="CENTER" text="Search Limit" GridPane.rowIndex="4" />
+                                        <ComboBox fx:id="Partner1SettingcomboBox" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <ComboBox fx:id="Partner2SettingcomboBox" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                        <ComboBox fx:id="Partner1CuinecomboBox" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <ComboBox fx:id="Partner2CuinecomboBox" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                        <ComboBox fx:id="Partner1DistancecomboBox" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <ComboBox fx:id="Partner2DistancecomboBox" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                        <ComboBox fx:id="Partner1SearchLimitcomboBox" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <ComboBox fx:id="Partner2SearchLimitcomboBox" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                                     </children>
                                 </GridPane>
                                 <Button fx:id="resultsButton" alignment="CENTER" layoutX="459.0" layoutY="326.0" mnemonicParsing="false" onAction="#changeToResultsScreen" text="Click for Results!" />
@@ -73,7 +77,7 @@
                                         <Image url="@../Resources/Logo.jpeg" />
                                     </image>
                                 </ImageView>
-                                <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner  for dates as unique as you!">
+                                <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner for dates as unique as you!">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
@@ -91,7 +95,7 @@
                                         <Image url="@../Resources/Logo.jpeg" />
                                     </image>
                                 </ImageView>
-                                <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner  for dates as unique as you!">
+                                <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner for dates as unique as you!">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
@@ -119,7 +123,7 @@
                                         <Image url="@../Resources/Logo.jpeg" />
                                     </image>
                                 </ImageView>
-                                <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner  for dates as unique as you!">
+                                <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner for dates as unique as you!">
                                     <font>
                                         <Font size="16.0" />
                                     </font>

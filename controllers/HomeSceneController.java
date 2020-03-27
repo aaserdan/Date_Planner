@@ -18,36 +18,20 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 
 /**
  * FXML Controller class
  *
  *
  */
-public class GuiController implements Initializable {
 
+public class HomeSceneController implements Initializable {
+    
     //FXML loader
     //Image for background
     @FXML
     private ImageView background;
-
-    //Buttons to gor from one scene to another
-    @FXML
-    private Button dateButton;
-
-    @FXML
-    private Button resultsButton;
-
-    //Combobox for setting of partner one
-    @FXML
-    protected ComboBox<String> settingP1ComboBox;
-
-    //Combobox for setting of partner two
-    @FXML
-    protected ComboBox<String> settingP2ComboBox;
-
+    
     /**
      * Changes from home screen to plan screen
      *
@@ -86,7 +70,6 @@ public class GuiController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }
 
 }
