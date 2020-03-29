@@ -31,7 +31,7 @@ public class Main extends Application {
     public void start(Stage _primaryStage) throws IOException {
 
         // To load GUI from primary.xml
-        Parent root = FXMLLoader.load(getClass().getResource("/Views/HomeScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/views/HomeScene.fxml"));
 
         // To add elements to scene
         Scene _primaryScene = new Scene(root);
@@ -61,7 +61,6 @@ public class Main extends Application {
         // Launching the GUI last in order to show the test results first!
         launch(args);
     }
-
 
     /**
      * Temporary 'database' for user 1 to test the application
