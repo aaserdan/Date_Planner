@@ -50,8 +50,7 @@ public class Main extends Application {
 
         // Creating a new user from the 'database'
         User model1 = userFromDatabase();
-        UserViewTEST view1 = new UserViewTEST();
-
+        UserView view1 = new UserView();
 
         // Creating a controller for the user
         UserController controller1 = new UserController(model1, view1);
