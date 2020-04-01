@@ -95,9 +95,6 @@ public class UserController {
     //======================== GETTERS ========================
     // Grabs the restaurant data from the Yelp API
     public void getRestaurants() {
-        String term = model.getTerm();
-        String city = model.getCity();
-        int SearchLimit = model.getSearchLimitYelp();
         adapters.FoodAPIAdapter.getRestaurant(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
     }
 
