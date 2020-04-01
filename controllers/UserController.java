@@ -95,12 +95,15 @@ public class UserController {
     //======================== GETTERS ========================
     // Grabs the restaurant data from the Yelp API
     public void getRestaurants() {
-        apis.adapters.YelpAPIAdapter.getRestaurant(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
+        String term = model.getTerm();
+        String city = model.getCity();
+        int SearchLimit = model.getSearchLimitYelp();
+        adapters.FoodAPIAdapter.getRestaurant(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
     }
 
     // Grabs the weather data from the API
     public void getWeather() {
-        apis.adapters.WeatherAPIAdapter.getWeatherInfo(model.getZipCode(), model.getCountryCode());
+        adapters.WeatherAPIAdapter.getWeatherInfo(model.getZipCode(), model.getCountryCode());
     }
 
     /**

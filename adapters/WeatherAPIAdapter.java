@@ -1,4 +1,4 @@
-package apis.adapters;
+package adapters;
 
 /**
  * Weather API Adapter class Class used to make calls to the WeatherAPI given
