@@ -95,7 +95,11 @@ public class UserController {
 
     //======================== GETTERS ========================
 
-    // Grabs the restaurant data from the Yelp API
+    /**
+     * Grabs restaurants from the API
+     *
+     * TO DO: Return the object from the API call
+     */
     public void getRestaraunts() {
         // Creates a new instance for the API request
         FoodAPIAdapter getFood = new FoodAPIAdapter();
@@ -104,7 +108,11 @@ public class UserController {
         getFood.getRestuarants(model.getTerm(), model.getCity(), model.getSearchLimit());
     }
 
-    // Grabs the weather data from the API
+    /**
+     * Grabs weather data from the API call
+     *
+     * TO DO: Return the object from the API call
+     */
     public void getWeather() {
         // Creates a new instance for the API request
         WeatherAPIAdapter getWeather = new WeatherAPIAdapter();

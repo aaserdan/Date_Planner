@@ -1,9 +1,9 @@
 package main;
 
 /**
- * This class is the main class it is used to start the application
+ * This is the main class used to run the application
  *
- * Last updated March 10 2020
+ * Last updated April 2 2020
  *
  * @author Nimra
  * @author Alejandro
@@ -46,17 +46,21 @@ public class Main extends Application {
         _primaryStage.show();
     }
 
+    /** Method that runs the entire program
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
-        // Creating a new user from the 'database'
-        User model1 = userFromDatabase();
-        UserView view1 = new UserView();
+        // Creating a new user from the temporary 'database'
+        User userOne = userFromDatabase();
+        UserView viewUserOne = new UserView();
 
         // Creating a controller for the user
-        UserController controller1 = new UserController(model1, view1);
+        UserController controllerUserOne = new UserController(userOne, viewUserOne);
 
         // Outputting the data and results using the controller
-        controller1.printResults();
+        controllerUserOne.printResults();
 
         // Launching the GUI last in order to show the test results first!
         launch(args);
