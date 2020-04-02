@@ -7,7 +7,7 @@ package apis;
  *
  * @Author Alejandro Penaloza
  */
-public class FoodAPIAdapter implements GetRestarauntsInterface {
+public class FoodAPIAdapter implements GetRestaurantsInterface {
 
     /**
      * Grabs food from the Yelp API
@@ -17,8 +17,11 @@ public class FoodAPIAdapter implements GetRestarauntsInterface {
      * @param _limit
      */
     @Override
-    public void getRestuarants(String _term, String _city, int _limit) {
-        FoodAPI.findRestaurantsYelp(_term, _city, _limit);
-       // throw new UnsupportedOperationException("Not supported yet.");
+    public String[] getRestuarants(String _term, String _city, int _limit) {
+        String[] restaurantsData;
+
+        restaurantsData = FoodAPI.findRestaurantsYelp(_term, _city, _limit);
+
+        return restaurantsData;
     }
 }

@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ResultsSceneController">
     <left>
@@ -23,11 +24,12 @@
                                         <Image url="@../Resources/Logo.jpeg" />
                                     </image>
                                 </ImageView>
-                                <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner for dates as unique as you!">
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font>
-                                </TextField>
+                        <TextArea editable="false" layoutX="14.0" layoutY="126.0" prefHeight="230.0" prefWidth="572.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="124.0" />
+                        <Text layoutX="207.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Results!" textAlignment="CENTER" wrappingWidth="303.2060546875">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
                             </children>
                         </AnchorPane>
                     </content>
