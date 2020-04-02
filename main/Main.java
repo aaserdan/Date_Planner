@@ -56,7 +56,7 @@ public class Main extends Application {
         UserController controller1 = new UserController(model1, view1);
 
         // Outputting the data and results using the controller
-        controller1.updateView();
+        controller1.printResults();
 
         // Launching the GUI last in order to show the test results first!
         launch(args);

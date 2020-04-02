@@ -21,5 +21,4 @@ public class WeatherAPIAdapter implements WeatherAPIInterface{
     public void getWeather(int _zipCode, String _countryCode) {
         WeatherAPI.getWeatherOpenWeatherMap(_zipCode, _countryCode);
     }
-
 }

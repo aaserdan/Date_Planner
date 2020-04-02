@@ -32,7 +32,7 @@ public class UserController {
      * Updates the view that outputs the data
      *
      */
-    public void updateView() {
+    public void printResults() {
         view.printResults(model.getName(), model.getCity(), model.getTerm(), model.getZipCode(), model.getCountryCode(), model.getSearchLimit());
         getWeather();
         getRestaraunts();
