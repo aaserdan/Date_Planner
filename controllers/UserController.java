@@ -14,6 +14,13 @@ import apis.*;
 
 public class UserController {
 
+    /**
+     * Variable used for debug mode
+     *
+     * 0 = OFF
+     * 1 = ON
+     */
+    private final int debugMode = 1;
     private final User model;
     private final UserView view;
 
@@ -35,7 +42,7 @@ public class UserController {
     public void printResults() {
         view.printResults(model.getName(), model.getCity(), model.getTerm(), model.getZipCode(), model.getCountryCode(), model.getSearchLimit());
         getWeather();
-        getRestaraunts();
+        getRestaurants();
     }
 
     //======================== SETTERS ========================
@@ -100,12 +107,19 @@ public class UserController {
      *
      * TO DO: Return the object from the API call
      */
-    public void getRestaraunts() {
+    public void getRestaurants() {
+        // Initiatialize array for data from restaurants
+        String[] restaurantsData;
+
         // Creates a new instance for the API request
         FoodAPIAdapter getFood = new FoodAPIAdapter();
 
         // Grabs restaraunts from the API (USES TERM, CITY, SEARCHLIMIT IN THAT ORDER)
-        getFood.getRestuarants(model.getTerm(), model.getCity(), model.getSearchLimit());
+        restaurantsData = getFood.getRestuarants(model.getTerm(), model.getCity(), model.getSearchLimit());
+
+        for (int i = 0; i < restaurantsData.length; i++) {
+            System.out.print(restaurantsData[i]);
+        }
     }
 
     /**
