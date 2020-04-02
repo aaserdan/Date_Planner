@@ -25,10 +25,15 @@ public class FoodAPI {
      * @param _term breakfast, lunch, or dinner, etc.
      * @param _city city where user is located
      * @param _limit search limit chosen by the user
+     * @return Array values
      */
-    public static void findRestaurantsYelp(String _term, String _city, int _limit) {
+    public static String[] findRestaurantsYelp(String _term, String _city, int _limit) {
         String baseUrlYelp = "https://api.yelp.com";
         String callActionYelp = "/v3/businesses/search?";
+        int numberOfValuesForEachRestaurant = 5;
+        int arraySpaceNeeded = _limit * numberOfValuesForEachRestaurant;
+        int counterForEachRestaurant = 0;
+        String[] restaurantsData = new String[arraySpaceNeeded];
 
         //Build the url
         String urlString = baseUrlYelp + callActionYelp + "term=" + _term + "&location=" + _city + "&limit=" + _limit;
@@ -69,29 +74,21 @@ public class FoodAPI {
             JSONObject obj = new JSONObject(content.toString());
             JSONArray jsonArray = obj.getJSONArray("businesses");
 
-            // Outputting the restaurants and their respective ratings
+            // Looping through every restaurant and adding it to the array
             for (int i = 0; i < _limit; i++) {
                 JSONObject businessIndex = jsonArray.getJSONObject(i);
                 JSONObject businessLocation = businessIndex.getJSONObject("location");
 
-                // Grabbing all restaurant data and placing them in their respective variables
-                String restaurantAddress = businessLocation.getString("address1");
-                String restaurantName = businessIndex.getString("name");
-                String restaurantRating = businessIndex.getString("rating");
-                String priceRange = businessIndex.getString("price");
-                String phoneNum = businessIndex.getString("display_phone");
-
-                // Displaying all of the restaurant data
-                System.out.println("Restaurant " + (i + 1) + ":");
-                System.out.println("-------- * --------");
-                System.out.println("Restaurant Name: " + restaurantName + "");
-                System.out.println("Address: " + restaurantAddress);
-                System.out.println("Phone Number: " + phoneNum);
-                System.out.println("Rating: " + restaurantRating);
-                System.out.println("Price: " + priceRange + "\n");
+                restaurantsData[counterForEachRestaurant] = "Restaurant Name: " + businessIndex.getString("name");
+                restaurantsData[counterForEachRestaurant += 1] = "Address: " + businessLocation.getString("address1");
+                restaurantsData[counterForEachRestaurant += 1] = "Rating: " + businessIndex.getString("rating");
+                restaurantsData[counterForEachRestaurant += 1] = "Price: " + businessIndex.getString("price");
+                restaurantsData[counterForEachRestaurant += 1] = "Phone Number: " + businessIndex.getString("display_phone");
+                counterForEachRestaurant += 1;
             }
         } catch (IOException | JSONException ex) {
             Logger.getLogger(FoodAPI.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return restaurantsData;
     }
 }
