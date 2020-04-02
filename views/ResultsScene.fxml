@@ -25,9 +25,10 @@
                                 </ImageView>
                                 <TextField alignment="CENTER" layoutX="153.0" layoutY="64.0" prefHeight="32.0" prefWidth="295.0" text="Date Planner for dates as unique as you!">
                                     <font>
-                                        <Font size="16.0" />
+                                        <Font size="14.0" />
                                     </font>
                                 </TextField>
+                        <TextArea editable="false" layoutX="14.0" layoutY="126.0" prefHeight="230.0" prefWidth="572.0" />
                             </children>
                         </AnchorPane>
                     </content>
