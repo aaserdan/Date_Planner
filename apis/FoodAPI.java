@@ -3,7 +3,7 @@ package apis;
 /**
  * Class used to make calls to the Yelp API given data from the YelpAdapter
  *
- * Last updated February 26 2020
+ * Last updated April 2 2020
  *
  * @Author Alejandro
  */
@@ -17,6 +17,9 @@ import java.util.logging.Logger;
 import org.json.*;
 
 public class FoodAPI {
+    private static final String baseUrlYelp = "https://api.yelp.com";
+    private static final String callActionYelp = "/v3/businesses/search?";
+    private static final int numberOfValuesForEachRestaurant = 5;
 
     /**
      * Method that makes a API call to the Yelp API for a list of restaurants in
@@ -25,12 +28,9 @@ public class FoodAPI {
      * @param _term breakfast, lunch, or dinner, etc.
      * @param _city city where user is located
      * @param _limit search limit chosen by the user
-     * @return Array values
+     * @return array values
      */
     public static String[] findRestaurantsYelp(String _term, String _city, int _limit) {
-        String baseUrlYelp = "https://api.yelp.com";
-        String callActionYelp = "/v3/businesses/search?";
-        int numberOfValuesForEachRestaurant = 5;
         int arraySpaceNeeded = _limit * numberOfValuesForEachRestaurant;
         int counterForEachRestaurant = 0;
         String[] restaurantsData = new String[arraySpaceNeeded];
@@ -53,7 +53,7 @@ public class FoodAPI {
             int status = connection.getResponseCode();
 
             //Response code used for debugging
-            System.out.println("Yelp API Response Code: " + status + " ---> SHOWN DURING DEBUG");
+            System.out.println("Yelp API Response Code: " + status + " ---> SHOWN FOR DEBUG PURPOSES");
 
             /* Grabs the response from the API and appends it to the content variable
                until it's empty                                                    */
