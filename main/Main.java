@@ -56,7 +56,7 @@ public class Main extends Application {
         UserController controller1 = new UserController(model1, view1);
 
         // Outputting the data and results using the controller
-        controller1.updateView();
+        controller1.printResults();
 
         // Launching the GUI last in order to show the test results first!
         launch(args);
@@ -73,7 +73,7 @@ public class Main extends Application {
         user1.setCity("greensboro");
         user1.setCountryCode("us");
         user1.setTerm("pasta");
-        user1.setSearchLimitYelp(3);
+        user1.setSearchLimit(3);
         user1.setZipCode(27513);
 
         return user1;

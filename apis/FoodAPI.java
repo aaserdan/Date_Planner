@@ -16,7 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.*;
 
-public class YelpAPI {
+public class FoodAPI {
 
     /**
      * Method that makes a API call to the Yelp API for a list of restaurants in
@@ -26,14 +26,12 @@ public class YelpAPI {
      * @param _city city where user is located
      * @param _limit search limit chosen by the user
      */
-    public static void findRestaurants(String _term, String _city, int _limit) {
-
-        // Create a HTTP Connection.
-        String baseUrl = "https://api.yelp.com";
-        String callAction = "/v3/businesses/search?";
+    public static void findRestaurantsYelp(String _term, String _city, int _limit) {
+        String baseUrlYelp = "https://api.yelp.com";
+        String callActionYelp = "/v3/businesses/search?";
 
         //Build the url
-        String urlString = baseUrl + callAction + "term=" + _term + "&location=" + _city + "&limit=" + _limit;
+        String urlString = baseUrlYelp + callActionYelp + "term=" + _term + "&location=" + _city + "&limit=" + _limit;
         URL url;
 
         try {
@@ -93,7 +91,7 @@ public class YelpAPI {
                 System.out.println("Price: " + priceRange + "\n");
             }
         } catch (IOException | JSONException ex) {
-            Logger.getLogger(YelpAPI.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FoodAPI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
