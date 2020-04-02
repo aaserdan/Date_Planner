@@ -10,6 +10,7 @@ package controllers;
  */
 import models.*;
 import views.*;
+import apis.*;
 
 public class UserController {
 
@@ -32,9 +33,9 @@ public class UserController {
      *
      */
     public void updateView() {
-        view.printResults(model.getName(), model.getCity(), model.getTerm(), model.getZipCode(), model.getCountryCode(), model.getSearchLimitYelp());
+        view.printResults(model.getName(), model.getCity(), model.getTerm(), model.getZipCode(), model.getCountryCode(), model.getSearchLimit());
         getWeather();
-        getRestaurants();
+        getRestaraunts();
     }
 
     //======================== SETTERS ========================
@@ -88,19 +89,28 @@ public class UserController {
      *
      * @param _searchLimit
      */
-    public void setYelpSearchLimit(int _searchLimit) {
-        model.setSearchLimitYelp(_searchLimit);
+    public void setSearchLimit(int _searchLimit) {
+        model.setSearchLimit(_searchLimit);
     }
 
     //======================== GETTERS ========================
+
     // Grabs the restaurant data from the Yelp API
-    public void getRestaurants() {
-        adapters.FoodAPIAdapter.getRestaurant(model.getTerm(), model.getCity(), model.getSearchLimitYelp());
+    public void getRestaraunts() {
+        // Creates a new instance for the API request
+        FoodAPIAdapter getFood = new FoodAPIAdapter();
+
+        // Grabs restaraunts from the API (USES TERM, CITY, SEARCHLIMIT IN THAT ORDER)
+        getFood.getRestuarants(model.getTerm(), model.getCity(), model.getSearchLimit());
     }
 
     // Grabs the weather data from the API
     public void getWeather() {
-        adapters.WeatherAPIAdapter.getWeatherInfo(model.getZipCode(), model.getCountryCode());
+        // Creates a new instance for the API request
+        WeatherAPIAdapter getWeather = new WeatherAPIAdapter();
+
+        // Calls the weather api using the instance getWeather (USES ZIPCODE, COUNTRYCODE IN THAT ORDER)
+        getWeather.getWeather(model.getZipCode(), model.getCountryCode());
     }
 
     /**
@@ -153,7 +163,7 @@ public class UserController {
      *
      * @return searchLmit
      */
-    public int getYelpSearchLimit() {
-        return model.getSearchLimitYelp();
+    public int getSearchLimit() {
+        return model.getSearchLimit();
     }
 }

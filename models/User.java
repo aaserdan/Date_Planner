@@ -14,7 +14,7 @@ public class User {
     private String term;
     private int zipCode;
     private String countryCode;
-    private int searchLimitYelp;
+    private int searchLimit;
 
     //======================== GETTERS ========================
     /**
@@ -67,8 +67,8 @@ public class User {
      *
      * @return
      */
-    public int getSearchLimitYelp() {
-        return this.searchLimitYelp;
+    public int getSearchLimit() {
+        return this.searchLimit;
     }
 
     //======================== SETTERS ========================
@@ -120,9 +120,9 @@ public class User {
     /**
      * Sets the search limit for Yelp given by the user
      *
-     * @param _searchLimitYelp
+     * @param _searchLimit
      */
-    public void setSearchLimitYelp(int _searchLimitYelp) {
-        this.searchLimitYelp = _searchLimitYelp;
+    public void setSearchLimit(int _searchLimit) {
+        this.searchLimit = _searchLimit;
     }
 }

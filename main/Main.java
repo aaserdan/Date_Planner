@@ -73,7 +73,7 @@ public class Main extends Application {
         user1.setCity("greensboro");
         user1.setCountryCode("us");
         user1.setTerm("pasta");
-        user1.setSearchLimitYelp(3);
+        user1.setSearchLimit(3);
         user1.setZipCode(27513);
 
         return user1;
