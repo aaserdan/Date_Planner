@@ -1,4 +1,5 @@
 package controllers;
+
 /**
  * This class serves as the controller for the plan scene
  *
@@ -32,7 +33,7 @@ public class PlanSceneController implements Initializable {
     private ComboBox<String> Partner1SettingcomboBox;
 
     ObservableList<String> partner1Settingoptions = FXCollections.observableArrayList("Dine In", "Take Out", "Fast Food");
-    
+
     //Combobox for setting options for partner two, displays all of the options
     @FXML
     private ComboBox<String> Partner2SettingcomboBox;
@@ -44,31 +45,31 @@ public class PlanSceneController implements Initializable {
     private ComboBox<String> Partner1CuinecomboBox;
 
     ObservableList<String> partner1Cusineoptions = FXCollections.observableArrayList("American","Caribbean", "Chinese", "French", "Italian", "Indian", "Japanese", "Mexican", "Mediterranean", "Spanish", "Sea Food", "Thai");
-    
+
     //Combobox for cusine options for partner two, displays all of the options
     @FXML
     private ComboBox<String> Partner2CuinecomboBox;
 
     ObservableList<String> partner2Cusineoptions = FXCollections.observableArrayList("American","Caribbean", "Chinese", "French", "Italian", "Indian", "Japanese", "Mexican", "Mediterranean", "Spanish", "Sea Food", "Thai");
-    
+
     //Combobox for distance options for partner one, displays all of the options
     @FXML
     private ComboBox<String> Partner1DistancecomboBox;
 
     ObservableList<String> partner1Distanceoptions = FXCollections.observableArrayList("Within 5 miles", "Within 10 miles", "Within 15 miles", "Within 20 miles", "Within 50 miles", "Within 100 miles");
-    
+
     //Combobox for distance options for partner two, displays all of the options
     @FXML
     private ComboBox<String> Partner2DistancecomboBox;
 
     ObservableList<String> partner2Distanceoptions = FXCollections.observableArrayList("Within 5 miles", "Within 10 miles", "Within 15 miles", "Within 20 miles", "Within 50 miles", "Within 100 miles");
-    
+
     //Combobox for search limit options for partner one, displays all of the options
     @FXML
     private ComboBox<String> Partner1SearchLimitcomboBox;
 
     ObservableList<String> partner1SearchLimitoptions = FXCollections.observableArrayList("1", "2", "3", "5", "7");
-    
+
     //Combobox for search limit options for partner one, displays all of the options
     @FXML
     private ComboBox<String> Partner2SearchLimitcomboBox;
