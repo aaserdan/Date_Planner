@@ -13,6 +13,7 @@ public interface WeatherAPIInterface {
      *
      * @param _zipCode
      * @param _countryCode
+     * @return an Array String with the weather information from the API
      */
-    void getWeather(int _zipCode, String _countryCode);
+    String [] getWeather(int _zipCode, String _countryCode);
 }

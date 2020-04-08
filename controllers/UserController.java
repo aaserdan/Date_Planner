@@ -111,11 +111,8 @@ public class UserController {
         // Initiatialize array for data from restaurants
         String[] restaurantsData;
 
-        // Creates a new instance for the API request
-        FoodAPIAdapter getFood = new FoodAPIAdapter();
-
-        // Grabs restaraunts from the API (USES TERM, CITY, SEARCHLIMIT IN THAT ORDER)
-        restaurantsData = getFood.getRestuarants(model.getTerm(), model.getCity(), model.getSearchLimit());
+        // Calls the FoodAPIAdapter to call grab the restaurants from the API (USES TERM, CITY, SEARCHLIMIT IN THAT ORDER)
+        restaurantsData = FoodAPIAdapter.getRestuarants(model.getTerm(), model.getCity(), model.getSearchLimit());
 
         for (int i = 0; i < restaurantsData.length; i++) {
             System.out.print(restaurantsData[i]);
@@ -128,11 +125,10 @@ public class UserController {
      * TO DO: Return the object from the API call
      */
     public void getWeather() {
-        // Creates a new instance for the API request
-        WeatherAPIAdapter getWeather = new WeatherAPIAdapter();
-
-        // Calls the weather api using the instance getWeather (USES ZIPCODE, COUNTRYCODE IN THAT ORDER)
-        getWeather.getWeather(model.getZipCode(), model.getCountryCode());
+        // Initiatialize array for data from weather API
+        String[] weatherData;
+        // Calls the weather Adapter to get the weather information from the WeatherAPI, getWeather (USES ZIPCODE, COUNTRYCODE IN THAT ORDER)
+        weatherData = WeatherAPIAdapter.getWeather(model.getZipCode(),  model.getCountryCode());
     }
 
     /**
