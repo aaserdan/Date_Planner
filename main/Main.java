@@ -75,8 +75,7 @@ public class Main extends Application {
     private static User userFromDatabase() {
         User user1 = new User();
         user1.setName("Alex");
-        user1.setCity("greensboro");
-        user1.setCountryCode("us");
+        user1.setCity("winstonsalem");
         user1.setTerm("pasta");
         user1.setSearchLimit(3);
         user1.setZipCode(27513);
