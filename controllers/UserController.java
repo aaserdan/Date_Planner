@@ -128,11 +128,10 @@ public class UserController {
      * TO DO: Return the object from the API call
      */
     public void getWeather() {
-        // Creates a new instance for the API request
-        WeatherAPIAdapter getWeather = new WeatherAPIAdapter();
-
-        // Calls the weather api using the instance getWeather (USES ZIPCODE, COUNTRYCODE IN THAT ORDER)
-        getWeather.getWeather(model.getZipCode(), model.getCountryCode());
+        // Initiatialize array for data from restaurants
+        String[] weatherData;
+        // Calls the weather Adapter to get the weather information from the WeatherAPI, getWeather (USES ZIPCODE, COUNTRYCODE IN THAT ORDER)
+        weatherData = WeatherAPIAdapter.getWeather(model.getZipCode(),  model.getCountryCode());
     }
 
     /**
