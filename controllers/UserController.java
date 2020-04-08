@@ -4,9 +4,11 @@ package controllers;
  * Controller used to manipulate the users data and make calls to the
  * appropriate models and views
  *
- * Last updated February 27 2020
+ * Last updated April 7 2020
  *
  * @Author Alejandro
+ * @Author Nimra
+ * @Author Arturo
  */
 import models.*;
 import views.*;
@@ -14,13 +16,6 @@ import apis.*;
 
 public class UserController {
 
-    /**
-     * Variable used for debug mode
-     *
-     * 0 = OFF
-     * 1 = ON
-     */
-    private final int debugMode = 1;
     private final User model;
     private final UserView view;
 
@@ -114,9 +109,9 @@ public class UserController {
         // Calls the FoodAPIAdapter to call grab the restaurants from the API (USES TERM, CITY, SEARCHLIMIT IN THAT ORDER)
         restaurantsData = FoodAPIAdapter.getRestuarants(model.getTerm(), model.getCity(), model.getSearchLimit());
 
-        for (int i = 0; i < restaurantsData.length; i++) {
-            System.out.print(restaurantsData[i]);
-        }
+            for (int i = 0; i < restaurantsData.length; i++) {
+                System.out.print(restaurantsData[i]);
+            }
     }
 
     /**
@@ -129,6 +124,10 @@ public class UserController {
         String[] weatherData;
         // Calls the weather Adapter to get the weather information from the WeatherAPI, getWeather (USES ZIPCODE, COUNTRYCODE IN THAT ORDER)
         weatherData = WeatherAPIAdapter.getWeather(model.getZipCode(),  model.getCountryCode());
+
+        for (int i = 0; i < weatherData.length; i++) {
+                System.out.print(weatherData[i]);
+            }
     }
 
     /**
