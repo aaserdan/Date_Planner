@@ -4,12 +4,12 @@ package apis;
  * Weather API Adapter class Class used to make calls to the WeatherAPI given
  * data from the WeatherAdapter
  *
- * Last updated March 19, 2020
+ * Last updated April 19, 2020
  *
  * @Author Arturo
  */
 
-public class WeatherAPIAdapter implements WeatherAPIInterface{
+public class WeatherAPIAdapter{
 
     /**
      * Grabs weather from the API
@@ -17,8 +17,14 @@ public class WeatherAPIAdapter implements WeatherAPIInterface{
      * @param _zipCode
      * @param _countryCode
      */
-    @Override
-    public void getWeather(int _zipCode, String _countryCode) {
-        WeatherAPI.getWeatherOpenWeatherMap(_zipCode, _countryCode);
+    public static String [] getWeather(int _zipCode, String _countryCode) {
+        // String Array to be returned with the weather API's information
+        String [] weatherInf = null;
+        // Creates a new instance for the API request
+        OpenWeatherMapAPI getWeatherInf = new OpenWeatherMapAPI();
+        
+        // Grabs the weather information from the API (USES ZIPCODE, COUNTRYCODE IN THAT ORDER)
+        weatherInf = getWeatherInf.getWeather(_zipCode, _countryCode);
+        return weatherInf;
     }
 }
