@@ -7,7 +7,7 @@ package apis;
  *
  * @Author Alejandro Penaloza
  */
-public class FoodAPIAdapter implements GetRestaurantsInterface {
+public class FoodAPIAdapter {
 
     /**
      * Grabs food from the Yelp API
@@ -16,12 +16,12 @@ public class FoodAPIAdapter implements GetRestaurantsInterface {
      * @param _city
      * @param _limit
      */
-    @Override
-    public String[] getRestuarants(String _term, String _city, int _limit) {
+    public static String[] getRestuarants(String _term, String _city, int _limit) {
         String[] restaurantsData;
-
-        restaurantsData = FoodAPI.findRestaurantsYelp(_term, _city, _limit);
-
+        // Creates a new instance for the API request
+        FoodAPI getFood = new FoodAPI();
+        // Grabs restaraunts from the API (USES TERM, CITY, SEARCHLIMIT IN THAT ORDER)
+        restaurantsData = getFood.getRestuarants(_term, _city, _limit);
         return restaurantsData;
     }
 }
