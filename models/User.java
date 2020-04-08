@@ -13,7 +13,6 @@ public class User {
     private String city;
     private String term;
     private int zipCode;
-    private String countryCode;
     private int searchLimit;
 
     //======================== GETTERS ========================
@@ -51,15 +50,6 @@ public class User {
      */
     public int getZipCode() {
         return this.zipCode;
-    }
-
-    /**
-     * Grabs the country code the user gave (Default set to 'US')
-     *
-     * @return country code
-     */
-    public String getCountryCode() {
-        return this.countryCode;
     }
 
     /**
@@ -106,15 +96,6 @@ public class User {
      */
     public void setZipCode(int _zipCode) {
         this.zipCode = _zipCode;
-    }
-
-    /**
-     * Sets the country given by the user
-     *
-     * @param _countryCode
-     */
-    public void setCountryCode(String _countryCode) {
-        this.countryCode = _countryCode;
     }
 
     /**
