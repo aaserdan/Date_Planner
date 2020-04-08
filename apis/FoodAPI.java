@@ -16,7 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.*;
 
-public class FoodAPI {
+public class FoodAPI implements GetRestaurantsInterface {
     private static final String baseUrlYelp = "https://api.yelp.com";
     private static final String callActionYelp = "/v3/businesses/search?";
     private static final int numberOfValuesForEachRestaurant = 5;
@@ -30,7 +30,8 @@ public class FoodAPI {
      * @param _limit search limit chosen by the user
      * @return array values
      */
-    public static String[] findRestaurantsYelp(String _term, String _city, int _limit) {
+    @Override
+    public String[] getRestuarants(String _term, String _city, int _limit) {
         int arraySpaceNeeded = _limit * numberOfValuesForEachRestaurant;
         int counterForEachRestaurant = 0;
         String[] restaurantsData = new String[arraySpaceNeeded];
