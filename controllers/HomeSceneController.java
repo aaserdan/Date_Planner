@@ -26,12 +26,11 @@ import javafx.scene.Node;
  */
 
 public class HomeSceneController implements Initializable {
-    
+
     //FXML loader
     //Image for background
-    @FXML
-    private ImageView background;
-    
+    @FXML private ImageView background;
+
     /**
      * Changes from home screen to plan screen
      *
