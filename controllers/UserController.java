@@ -18,6 +18,7 @@ public class UserController {
 
     private final User model;
     private final UserView view;
+    private final String countryCode = "us";
 
     /**
      * Creates the controller for the model & view
@@ -35,7 +36,7 @@ public class UserController {
      *
      */
     public void printResults() {
-        view.printResults(model.getName(), model.getCity(), model.getTerm(), model.getZipCode(), model.getCountryCode(), model.getSearchLimit());
+        view.printResults(model.getName(), model.getCity(), model.getTerm(), model.getZipCode(), model.getSearchLimit());
         getWeather();
         getRestaurants();
     }
@@ -78,15 +79,6 @@ public class UserController {
     }
 
     /**
-     * Sets the country code for the model
-     *
-     * @param _countryCode
-     */
-    public void setCountryCode(String _countryCode) {
-        model.setCountryCode(_countryCode);
-    }
-
-    /**
      * Sets the Yelp search limit for the model
      *
      * @param _searchLimit
@@ -123,7 +115,7 @@ public class UserController {
         // Initiatialize array for data from weather API
         String[] weatherData;
         // Calls the weather Adapter to get the weather information from the WeatherAPI, getWeather (USES ZIPCODE, COUNTRYCODE IN THAT ORDER)
-        weatherData = WeatherAPIAdapter.getWeather(model.getZipCode(),  model.getCountryCode());
+        weatherData = WeatherAPIAdapter.getWeather(model.getZipCode(), countryCode);
 
         for (int i = 0; i < weatherData.length; i++) {
                 System.out.print(weatherData[i]);
@@ -164,15 +156,6 @@ public class UserController {
      */
     public int getZipCode() {
         return model.getZipCode();
-    }
-
-    /**
-     * Grabs the country code given to the model
-     *
-     * @return countryCode
-     */
-    public String getCountryCode() {
-        return model.getCountryCode();
     }
 
     /**
