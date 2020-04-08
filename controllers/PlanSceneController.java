@@ -75,6 +75,7 @@ public class PlanSceneController implements Initializable {
     private ComboBox<String> Partner2SearchLimitcomboBox;
 
     ObservableList<String> partner2SearchLimitoptions = FXCollections.observableArrayList("1", "2", "3", "5", "7");
+
     /**
      * Takes the user from plan screen to results screen
      *
