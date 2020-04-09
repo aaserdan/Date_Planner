@@ -87,7 +87,6 @@ public class PlanSceneController implements Initializable {
         partnerTwo.setName(this.partner2Name.getText());
         partnerTwo.setCity(this.city.getText());
         partnerTwo.setTerm(this.Partner2CuinecomboBox.getValue());
-        System.out.println(partnerTwo.getTerm());
         partnerTwo.setSearchLimit(Integer.parseInt(this.Partner2SearchLimitcomboBox.getValue()));
         partnerTwo.setZipCode(Integer.parseInt(this.zipCode.getText()));
 
