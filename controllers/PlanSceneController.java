@@ -22,28 +22,40 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import models.*;
+import views.*;
 
 public class PlanSceneController implements Initializable {
 
     // ==================================== VARIABLES ====================================
 
     //Combobox for cusine options for partner one, displays all of the options
-    @FXML private ComboBox<String> Partner1CuinecomboBox;
+    @FXML
+    private ComboBox<String> Partner1CuinecomboBox;
 
     //Combobox for search limit options for partner one, displays all of the options
-    @FXML private ComboBox<String> Partner1SearchLimitcomboBox;
+    @FXML
+    private ComboBox<String> Partner1SearchLimitcomboBox;
 
     //Combobox for cusine options for partner two, displays all of the options
-    @FXML private ComboBox<String> Partner2CuinecomboBox;
+    @FXML
+    private ComboBox<String> Partner2CuinecomboBox;
 
     //Combobox for search limit options for partner one, displays all of the options
-    @FXML private ComboBox<String> Partner2SearchLimitcomboBox;
+    @FXML
+    private ComboBox<String> Partner2SearchLimitcomboBox;
 
-    @FXML private TextField partner1Name;
-    @FXML private TextField partner2Name;
+    @FXML // fx:id = partner1Name
+    private TextField partner1Name;
 
-    @FXML private TextField city;
-    @FXML private TextField zipCode;
+    @FXML // fx:id = partner2Name
+    private TextField partner2Name;
+
+    @FXML // fx:id = city
+    private TextField city;
+
+    @FXML // fx:id = zipCode
+    private TextField zipCode;
 
     // ==================================== OBVSERVABLE LISTS ====================================
 
@@ -63,17 +75,31 @@ public class PlanSceneController implements Initializable {
      */
     @FXML
     public void resultsButtonPressed(ActionEvent _event) throws Exception {
+        User partnerOne = new User();
+        User partnerTwo = new User();
 
-        String partnerOneName = this.partner1Name.getText();
-        String partnerTwoName = this.partner2Name.getText();
-        String cityGiven = this.city.getText();
-        String zipCodeGiven = this.zipCode.getText();
+        partnerOne.setName(this.partner1Name.getText());
+        partnerOne.setCity(this.city.getText());
+        partnerOne.setTerm(this.Partner1CuinecomboBox.getValue());
+        partnerOne.setSearchLimit(Integer.parseInt(this.Partner1SearchLimitcomboBox.getValue()));
+        partnerOne.setZipCode(Integer.parseInt(this.zipCode.getText()));
 
-        System.out.println("Switching to results screen...");
-        System.out.println(partnerOneName);
-        System.out.println(partnerTwoName);
-        System.out.println(cityGiven);
-        System.out.println(zipCodeGiven);
+        partnerTwo.setName(this.partner2Name.getText());
+        partnerTwo.setCity(this.city.getText());
+        partnerTwo.setTerm(this.Partner2CuinecomboBox.getValue());
+        System.out.println(partnerTwo.getTerm());
+        partnerTwo.setSearchLimit(Integer.parseInt(this.Partner2SearchLimitcomboBox.getValue()));
+        partnerTwo.setZipCode(Integer.parseInt(this.zipCode.getText()));
+
+        UserView viewPartnerOne = new UserView();
+        UserView viewPartnerTwo = new UserView();
+
+        UserController controllerPartnerOne = new UserController(partnerOne, viewPartnerOne);
+        UserController controllerPartnerTwo = new UserController(partnerTwo, viewPartnerTwo);
+
+        controllerPartnerOne.printResults();
+        controllerPartnerTwo.printResults();
+
 
         //new FXML loader and scene for new screen
         Parent root = FXMLLoader.load(getClass().getResource("/views/ResultsScene.fxml"));
