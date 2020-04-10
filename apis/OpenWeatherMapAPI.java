@@ -93,12 +93,10 @@ public class OpenWeatherMapAPI implements WeatherAPIInterface{
             JSONObject mainObj = _obj.getJSONObject("main");
             int currentTemp = mainObj.getInt("temp");
 
-            // Passes the int to String and adds it to weatherInf Array String
-            _weatherInf[0] = Integer.toString(OpenWeatherMapAPI.toFahrenheit(currentTemp));
+            // Passes the int to String and adds it to weatherInf Array String (Can be changed to return celcius instead)
+            _weatherInf[0] = Integer.toString(OpenWeatherMapAPI.toFahrenheit(currentTemp)) + " F";
 
             // Calls to convert temperature into Celcius and Fahrenheit & prints out
-            System.out.println("Current Temperature: " + toFahrenheit(currentTemp) + " F");
-            System.out.println("Current Temperature: " + toCelsius(currentTemp) + " C");
 
             //Extracting the weather array for the weather description
             JSONArray jsonArray = _obj.getJSONArray("weather");
@@ -107,7 +105,6 @@ public class OpenWeatherMapAPI implements WeatherAPIInterface{
 
             // Adds the weather description to the weatherInf array string
             _weatherInf[1] = weatherDesc;
-            System.out.println("Weather Description: " + weatherDesc + "\n");
 
         } catch (JSONException ex) {
             Logger.getLogger(OpenWeatherMapAPI.class.getName()).log(Level.SEVERE, null, ex);
@@ -136,6 +133,4 @@ public class OpenWeatherMapAPI implements WeatherAPIInterface{
         int tempFahrenheit = (int) (((_temp - 273.15) * 1.8) + 32);
         return tempFahrenheit;
     }
-
-
 }
