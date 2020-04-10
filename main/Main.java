@@ -3,7 +3,7 @@ package main;
 /**
  * This is the main class used to run the application
  *
- * Last updated April 8 2020
+ * Last updated April 9 2020
  *
  * @author Nimra
  * @author Alejandro
@@ -18,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
 
     /** Runs the entire program
      *
