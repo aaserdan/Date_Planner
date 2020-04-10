@@ -104,6 +104,16 @@
                   <TextField fx:id="zipCode" promptText="Zip Code" GridPane.columnIndex="3" />
                </children>
             </GridPane>
+            <Label layoutX="89.0" layoutY="338.0" text="PLEASE MAKE SURE INPUTS ARE VALID" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="159.0" layoutY="361.0" text="AND ARE ALL FILLED IN" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
                 </children>
             </AnchorPane>
    </center>

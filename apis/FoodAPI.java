@@ -20,7 +20,7 @@ import org.json.*;
 public class FoodAPI implements GetRestaurantsInterface {
     private static final String baseUrlYelp = "https://api.yelp.com";
     private static final String callActionYelp = "/v3/businesses/search?";
-    private static final int numberOfValuesForEachRestaurant = 5;
+    public static int numberOfValuesForEachRestaurant = 5;
 
     /**
      * Method that makes a API call to the Yelp API for a list of restaurants in

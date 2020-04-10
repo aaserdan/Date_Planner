@@ -4,45 +4,26 @@ package controllers;
  * Controller used to manipulate the users data and make calls to the
  * appropriate models and views
  *
- * Last updated February 27 2020
+ * Last updated April 9 2020
  *
  * @Author Alejandro
+ * @Author Nimra
+ * @Author Arturo
  */
-import models.*;
-import views.*;
-import apis.*;
+
+import models.User;
 
 public class UserController {
 
-    /**
-     * Variable used for debug mode
-     *
-     * 0 = OFF
-     * 1 = ON
-     */
-    private final int debugMode = 1;
     private final User model;
-    private final UserView view;
 
     /**
      * Creates the controller for the model & view
      *
      * @param _model
-     * @param _view
      */
-    public UserController(User _model, UserView _view) {
+    public UserController(User _model) {
         this.model = _model;
-        this.view = _view;
-    }
-
-    /**
-     * Updates the view that outputs the data
-     *
-     */
-    public void printResults() {
-        view.printResults(model.getName(), model.getCity(), model.getTerm(), model.getZipCode(), model.getCountryCode(), model.getSearchLimit());
-        getWeather();
-        getRestaurants();
     }
 
     //======================== SETTERS ========================
@@ -83,15 +64,6 @@ public class UserController {
     }
 
     /**
-     * Sets the country code for the model
-     *
-     * @param _countryCode
-     */
-    public void setCountryCode(String _countryCode) {
-        model.setCountryCode(_countryCode);
-    }
-
-    /**
      * Sets the Yelp search limit for the model
      *
      * @param _searchLimit
@@ -101,36 +73,6 @@ public class UserController {
     }
 
     //======================== GETTERS ========================
-
-    /**
-     * Grabs restaurants from the API
-     *
-     * TO DO: Return the object from the API call
-     */
-    public void getRestaurants() {
-        // Initiatialize array for data from restaurants
-        String[] restaurantsData;
-
-        // Calls the FoodAPIAdapter to call grab the restaurants from the API (USES TERM, CITY, SEARCHLIMIT IN THAT ORDER)
-        restaurantsData = FoodAPIAdapter.getRestuarants(model.getTerm(), model.getCity(), model.getSearchLimit());
-
-        for (int i = 0; i < restaurantsData.length; i++) {
-            System.out.print(restaurantsData[i]);
-        }
-    }
-
-    /**
-     * Grabs weather data from the API call
-     *
-     * TO DO: Return the object from the API call
-     */
-    public void getWeather() {
-        // Initiatialize array for data from weather API
-        String[] weatherData;
-        // Calls the weather Adapter to get the weather information from the WeatherAPI, getWeather (USES ZIPCODE, COUNTRYCODE IN THAT ORDER)
-        weatherData = WeatherAPIAdapter.getWeather(model.getZipCode(),  model.getCountryCode());
-    }
-
     /**
      * Grabs the name of the user
      *
@@ -165,15 +107,6 @@ public class UserController {
      */
     public int getZipCode() {
         return model.getZipCode();
-    }
-
-    /**
-     * Grabs the country code given to the model
-     *
-     * @return countryCode
-     */
-    public String getCountryCode() {
-        return model.getCountryCode();
     }
 
     /**
