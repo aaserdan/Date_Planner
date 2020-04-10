@@ -156,7 +156,7 @@ public class PlanSceneController implements Initializable {
      */
     public void setPartnerOneData(User _partnerOne) {
         _partnerOne.setName(this.partner1Name.getText());
-        _partnerOne.setCity(this.city.getText());
+        _partnerOne.setCity(this.city.getText().replaceAll("\\s",""));
         _partnerOne.setTerm(this.Partner1CusinecomboBox.getValue());
         _partnerOne.setSearchLimit(Integer.parseInt(this.Partner1SearchLimitcomboBox.getValue()));
         _partnerOne.setZipCode(Integer.parseInt(this.zipCode.getText()));
@@ -178,7 +178,7 @@ public class PlanSceneController implements Initializable {
      */
     public void setPartnerTwoData(User _partnerTwo) {
         _partnerTwo.setName(this.partner2Name.getText());
-        _partnerTwo.setCity(this.city.getText());
+        _partnerTwo.setCity(this.city.getText().replaceAll("\\s",""));
         _partnerTwo.setTerm(this.Partner2CusinecomboBox.getValue());
         _partnerTwo.setSearchLimit(Integer.parseInt(this.Partner2SearchLimitcomboBox.getValue()));
         _partnerTwo.setZipCode(Integer.parseInt(this.zipCode.getText()));
