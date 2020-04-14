@@ -7,7 +7,6 @@ package controllers;
  *
  * @Author Alejandro
  */
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -90,7 +89,6 @@ public class ResultsSceneController implements Initializable {
     }
 
     //======================== SETTERS ========================
-
     /**
      * Sets the temperature
      *
@@ -140,8 +138,7 @@ public class ResultsSceneController implements Initializable {
             if (i == 0) {
                 this.partnerOneTextArea.appendText(restaurantNum + ")------------------------------- \n");
                 restaurantNum++;
-            }
-            // case that appends the restaurant number the for loop is on and resets the restaurant counter
+            } // case that appends the restaurant number the for loop is on and resets the restaurant counter
             else if (restaurantCounter == apis.FoodAPI.numberOfValuesForEachRestaurant) {
                 restaurantCounter = 0;
                 this.partnerOneTextArea.appendText(restaurantNum + ")------------------------------- \n");
@@ -170,8 +167,7 @@ public class ResultsSceneController implements Initializable {
             if (i == 0) {
                 this.partnerTwoTextArea.appendText(restaurantNum + ")------------------------------- \n");
                 restaurantNum++;
-            }
-            // case that appends the restaurant number the for loop is on and resets the restaurant counter
+            } // case that appends the restaurant number the for loop is on and resets the restaurant counter
             else if (restaurantCounter == apis.FoodAPI.numberOfValuesForEachRestaurant) {
                 restaurantCounter = 0;
                 this.partnerTwoTextArea.appendText(restaurantNum + ")------------------------------- \n");
