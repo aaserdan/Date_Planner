@@ -25,7 +25,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.*;
-import org.json.JSONException;
 
 public class PlanSceneController implements Initializable {
 
