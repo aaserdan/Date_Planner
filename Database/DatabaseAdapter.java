@@ -1,4 +1,4 @@
-package Database;
+package database;
 
 /**
  * Database Adapter class used to make calls to the Database 

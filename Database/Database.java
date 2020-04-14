@@ -1,4 +1,4 @@
-package Database;
+package database;
 
 /**
  * The class contains all necessary methods to be able to write and read from a given file

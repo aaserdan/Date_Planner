@@ -1,4 +1,4 @@
-package Database;
+package database;
 
 /**
  * Provides a way to write and read from a file
