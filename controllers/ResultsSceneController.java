@@ -3,11 +3,10 @@ package controllers;
 /**
  * Controller used to display user data in the results scene of the GUI
  *
- * Last updated April 9 2020
+ * Last updated April 14 2020
  *
  * @Author Alejandro
  */
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -27,21 +26,27 @@ public class ResultsSceneController implements Initializable {
     private int restaurantCounter = 0;
     private int restaurantNum = 1;
 
+    // label used to display the temperature
     @FXML
     private Label cityTemp;
 
+    // label used to display the weather description
     @FXML
     private Label weatherDescription;
 
+    // label used to display partner ones name
     @FXML
     private Label partnerOneNameLabel;
 
+    // label used to display partner twos name
     @FXML
     private Label partnerTwoNameLabel;
 
+    // text area used to append restaurant data for partner one
     @FXML
     private TextArea partnerOneTextArea;
 
+    // text area used to append restaurant data for partner two
     @FXML
     private TextArea partnerTwoTextArea;
 
@@ -84,7 +89,6 @@ public class ResultsSceneController implements Initializable {
     }
 
     //======================== SETTERS ========================
-
     /**
      * Sets the temperature
      *
@@ -134,8 +138,7 @@ public class ResultsSceneController implements Initializable {
             if (i == 0) {
                 this.partnerOneTextArea.appendText(restaurantNum + ")------------------------------- \n");
                 restaurantNum++;
-            }
-            // case that appends the restaurant number the for loop is on and resets the restaurant counter
+            } // case that appends the restaurant number the for loop is on and resets the restaurant counter
             else if (restaurantCounter == apis.FoodAPI.numberOfValuesForEachRestaurant) {
                 restaurantCounter = 0;
                 this.partnerOneTextArea.appendText(restaurantNum + ")------------------------------- \n");
@@ -145,7 +148,7 @@ public class ResultsSceneController implements Initializable {
             this.partnerOneTextArea.appendText(_restaurants[i] + "\n");
             restaurantCounter++;
         }
-        // Resetting the restaurant counter and num to allow for future scaling
+        // Resetting the restaurant counter and num to allow for multiple uses
         restaurantCounter = 0;
         restaurantNum = 1;
     }
@@ -164,8 +167,7 @@ public class ResultsSceneController implements Initializable {
             if (i == 0) {
                 this.partnerTwoTextArea.appendText(restaurantNum + ")------------------------------- \n");
                 restaurantNum++;
-            }
-            // case that appends the restaurant number the for loop is on and resets the restaurant counter
+            } // case that appends the restaurant number the for loop is on and resets the restaurant counter
             else if (restaurantCounter == apis.FoodAPI.numberOfValuesForEachRestaurant) {
                 restaurantCounter = 0;
                 this.partnerTwoTextArea.appendText(restaurantNum + ")------------------------------- \n");
@@ -175,7 +177,7 @@ public class ResultsSceneController implements Initializable {
             this.partnerTwoTextArea.appendText(_restaurants[i] + "\n");
             restaurantCounter++;
         }
-        // Resetting the restaurant counter and num to allow for future scaling
+        // Resetting the restaurant counter and num to allow for multiple uses
         restaurantCounter = 0;
         restaurantNum = 1;
     }
