@@ -18,20 +18,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Database implements DatabaseInterface {
-    
+
     // Used to keep track of the UUIDs and store them
     static Stack<String> stack = new Stack<String>();
-    
+
     // Number of the UUIDs
     static int fileSize = 0;
     static int iterator = 0;
-    
+
     /**
      * Writes in elements on a file, writing a coma to separate different information
      * Provides a UUID to keep track of elements written
      * @param _array elements coming in to be written
      * @param _file file where the information will be stored
      */
+    @Override
     public void writeIn(String [] _array, File _file){
         String newSpace = "\n";
         String coma = ",";
@@ -42,7 +43,7 @@ public class Database implements DatabaseInterface {
         Database guuid = new Database();
         writer.write(guuid.generateUUID() + " :");
         for(int i =0; i<_array.length; i++){
-            
+
             if(i==(_array.length-1)){
             writer.write(_array[i]);
             }
@@ -57,13 +58,13 @@ public class Database implements DatabaseInterface {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     /**
      * Reads the entire file and puts the content on a String to be returned
      * @param _file file to be read from
      * @return fullFile String that contains the data from file
      * @throws FileNotFoundException
-     * @throws IOException 
+     * @throws IOException
      */
     @Override
     public String readFile(File _file) throws FileNotFoundException, IOException {
@@ -75,14 +76,14 @@ public class Database implements DatabaseInterface {
         }
         return fullFile;
     }
-    
+
     /**
      * Finds the data in a file based on the UUID, returns a string containing the data
      * @param _file file to be read from
-     * @param _uuid UUID String 
+     * @param _uuid UUID String
      * @return element Returns the data contained at the location of the UUID
      * @throws FileNotFoundException
-     * @throws IOException 
+     * @throws IOException
      */
     @Override
     public String findText(File _file, String _uuid) throws FileNotFoundException, IOException{
@@ -101,7 +102,7 @@ public class Database implements DatabaseInterface {
      * If file is empty returns 0
      * @param _file the file where the size will be read from
      * @return ReadInFile.fileSize with the size from the ReadInFile.stack
-     * @throws IOException 
+     * @throws IOException
      */
     @Override
     public int getSizFile(File _file) throws IOException{
@@ -138,7 +139,7 @@ public class Database implements DatabaseInterface {
      * @param _file the file that is be read from
      * @param _numElmtsReturn number of elements to be returned
      * @return elmtsInFile Array String with the elements from the file
-     * @throws IOException 
+     * @throws IOException
      */
     @Override
     public String [] getLastElements(File _file, int _numElmtsReturn) throws IOException{
@@ -146,7 +147,7 @@ public class Database implements DatabaseInterface {
         // Creates a new instance for to generate getLastUUID() method
         Database uuid = new Database();
         String [] UUIDs = uuid.getLastUUID(_file, _numElmtsReturn);
-        
+
         for(int i =0; i<_numElmtsReturn; i++){
             elmtsInFile[i] = uuid.findText(_file, UUIDs[i]);
         }
@@ -156,7 +157,7 @@ public class Database implements DatabaseInterface {
     /**
      * Finds the last "x" number of UUIDs on the file
      * @param _numElmtsReturn number of elements to be returned
-     * @return elementsReturned Array string containing the last "x" number of UUIDS from the file 
+     * @return elementsReturned Array string containing the last "x" number of UUIDS from the file
      */
     @Override
     public String [] getLastUUID(File _file, int _numUUIDsReturn) throws IOException{
@@ -170,22 +171,22 @@ public class Database implements DatabaseInterface {
             UUIDs[i]= Database.stack.get(Database.iterator-i);
         i++;
         }
-        
+
         return UUIDs;
     }
-    
+
     // Characters to be used on to generate the UUID
     private final char[] sourceCharacters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z', '0','1','2','3','4','5','6','7','8','9'};
-    
+
     // UUID parts dived by number of characters
     private final int timeLow = 8;
     private final int timeMid = 4;
     private final int timeHiAndVersion = 4;
     private final int clockSeqHiAndResClockSeqLow = 4;
     private final int node =12;
-    
+
     /**
-     * Generates a UUID 
+     * Generates a UUID
      * @return UUIDreturned String returned containing the UUID
      */
     @Override
@@ -200,7 +201,7 @@ public class Database implements DatabaseInterface {
         UUIDReturned += grs.getRandomString(node);
         return UUIDReturned;
     }
-    
+
     /**
      * Generates the random parts of the UUID
      * @param strLength length of the String to be created
@@ -216,13 +217,13 @@ public class Database implements DatabaseInterface {
         }
         return randomString;
     }
-    
+
     /**
      * Returns a random character from the list of characters
      * @return the random character
      */
     public char getRandomChar() {
-        int rand = ThreadLocalRandom.current().nextInt(0,DatabaseInterface.sourceCharacters.length);        
+        int rand = ThreadLocalRandom.current().nextInt(0,DatabaseInterface.sourceCharacters.length);
         char chrReturned = DatabaseInterface.sourceCharacters[rand];
         return chrReturned;
     }

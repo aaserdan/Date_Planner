@@ -58,15 +58,19 @@ public class PlanSceneController implements Initializable {
     @FXML
     private ComboBox<String> Partner2SearchLimitcomboBox;
 
+    // Text field where partner one inputs their name
     @FXML
     private TextField partner1Name;
 
+    // Text field where partner two inputs their name
     @FXML
     private TextField partner2Name;
 
+    // Text field where the city is entered
     @FXML
     private TextField city;
 
+    // Text field where zip code is entered 
     @FXML
     private TextField zipCode;
 
@@ -148,6 +152,8 @@ public class PlanSceneController implements Initializable {
         Partner2SearchLimitcomboBox.setItems(searchLimitOptions);
     }
 
+    //====================================== SETTERS ======================================
+    
     /**
      * Sets the data for partner 1
      *
@@ -193,19 +199,6 @@ public class PlanSceneController implements Initializable {
     }
 
     /**
-     *  Grabs weather data from the API call
-     *
-     * @param _partnerOne
-     */
-    public void getWeatherData(User _partnerOne) {
-        weatherData = WeatherAPIAdapter.getWeather(_partnerOne.getZipCode(), countryCode);
-
-        // grabbing the elements from the array and putting them into their respective variables
-        temp = weatherData[0];
-        weatherDescription = weatherData[1];
-    }
-
-    /**
      * Method that passes the values the users inputted to the results controller
      *
      * @param _controller
@@ -219,5 +212,20 @@ public class PlanSceneController implements Initializable {
         _controller.setPartnerTwoName(_partnerTwo.getName());
         _controller.setPartnerOneRestaurants(partnerOneRestaurants);
         _controller.setPartnerTwoRestaurants(partnerTwoRestaurants);
+    }
+
+    //===================================== GETTERS =====================================
+    
+    /**
+     *  Grabs weather data from the API call
+     *
+     * @param _partnerOne
+     */
+    public void getWeatherData(User _partnerOne) {
+        weatherData = WeatherAPIAdapter.getWeather(_partnerOne.getZipCode(), countryCode);
+
+        // grabbing the elements from the array and putting them into their respective variables
+        temp = weatherData[0];
+        weatherDescription = weatherData[1];
     }
 }
