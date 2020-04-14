@@ -17,7 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Launch extends Application {
 
     /** Runs the entire program
      *
