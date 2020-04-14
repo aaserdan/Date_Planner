@@ -31,13 +31,13 @@ public class PlanSceneController implements Initializable {
     // ==================================== VARIABLES ====================================
 
     // Variables that store the weather data to be passed to results
-    String[] weatherData;
-    String weatherDescription;
-    String temp;
+    private String[] weatherData;
+    private String weatherDescription;
+    private String temp;
 
     // Arrays that store restaurant data to be passed to results
-    String[] partnerOneRestaurants;
-    String[] partnerTwoRestaurants;
+    private String[] partnerOneRestaurants;
+    private String[] partnerTwoRestaurants;
 
     // Default country code used for the weather
     private final String countryCode = "us";
@@ -70,7 +70,7 @@ public class PlanSceneController implements Initializable {
     @FXML
     private TextField city;
 
-    // Text field where zip code is entered 
+    // Text field where zip code is entered
     @FXML
     private TextField zipCode;
 
@@ -153,7 +153,7 @@ public class PlanSceneController implements Initializable {
     }
 
     //====================================== SETTERS ======================================
-    
+
     /**
      * Sets the data for partner 1
      *
@@ -215,7 +215,7 @@ public class PlanSceneController implements Initializable {
     }
 
     //===================================== GETTERS =====================================
-    
+
     /**
      *  Grabs weather data from the API call
      *
