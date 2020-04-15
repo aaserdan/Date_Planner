@@ -3,7 +3,7 @@ package apis;
 /**
  * Interface used for API food calls
  *
- * @author Alex
+ * @author Alejandro
  *
  * Last updated 4/1/2020 (No April Fools)
  */
