@@ -18,13 +18,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import java.io.File;
 
 public class ResultsSceneController implements Initializable {
 
     // counters for use within the restaurant for loops
     private int restaurantCounter = 0;
     private int restaurantNum = 1;
+
+    // String array for contact us page;
+    private String[] contactUsSubmission;
+
+    File contactUsDatabase = new File("/datePlanner/src/database/contactUs.txt");
 
     // label used to display the temperature
     @FXML
@@ -49,6 +56,22 @@ public class ResultsSceneController implements Initializable {
     // text area used to append restaurant data for partner two
     @FXML
     private TextArea partnerTwoTextArea;
+
+    // Text field for contact us page
+    @FXML
+    private TextField contactUsName;
+
+    // Text field for contact us page
+    @FXML
+    private TextField contactUsEmail;
+
+    // Text field for contact us page
+    @FXML
+    private TextField contactUsSubject;
+
+    // Text field for contact us page
+    @FXML
+    private TextField contactUsMessage;
 
     /**
      * Starts the program over
@@ -75,6 +98,20 @@ public class ResultsSceneController implements Initializable {
      */
     public void quitButtonPressed() {
         System.exit(0);
+    }
+
+    public void contactUsSendButtonPressed() {
+        contactUsSubmission[0] = contactUsName.getText();
+        contactUsSubmission[1] = contactUsEmail.getText();
+        contactUsSubmission[2] = contactUsSubject.getText();
+        contactUsSubmission[3] = contactUsMessage.getText();
+
+        database.DatabaseAdapter.writeIn(contactUsSubmission, contactUsDatabase);
+
+        contactUsName.clear();
+        contactUsEmail.clear();
+        contactUsSubject.clear();
+        contactUsMessage.clear();
     }
 
     /**
