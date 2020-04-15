@@ -57,21 +57,21 @@ public class ResultsSceneController implements Initializable {
     @FXML
     private TextArea partnerTwoTextArea;
 
-    // Text field for contact us page
+    // Text area for contact us page
     @FXML
     private TextField contactUsName;
 
-    // Text field for contact us page
+    // Text area for contact us page
     @FXML
     private TextField contactUsEmail;
 
-    // Text field for contact us page
+    // Text area for contact us page
     @FXML
     private TextField contactUsSubject;
 
-    // Text field for contact us page
+    // Text area for contact us page
     @FXML
-    private TextField contactUsMessage;
+    private TextArea contactUsMessage;
 
     /**
      * Starts the program over
@@ -100,12 +100,18 @@ public class ResultsSceneController implements Initializable {
         System.exit(0);
     }
 
-    public void contactUsSendButtonPressed() {
+    /**
+     * Grabs data from the contact us tab and adds it to the database
+     *
+     * TODO: write to text file without crashing
+     */
+    public void contactUsSendButtonPressed(ActionEvent _event) throws Exception {
         contactUsSubmission[0] = contactUsName.getText();
         contactUsSubmission[1] = contactUsEmail.getText();
         contactUsSubmission[2] = contactUsSubject.getText();
         contactUsSubmission[3] = contactUsMessage.getText();
 
+        // POSSIBLY WHATS THROWING THE ERROR
         database.DatabaseAdapter.writeIn(contactUsSubmission, contactUsDatabase);
 
         contactUsName.clear();
