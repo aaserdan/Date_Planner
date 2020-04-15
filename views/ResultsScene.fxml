@@ -45,7 +45,7 @@
                                                    <font>
                                                       <Font name="Verdana" size="18.0" />
                                                    </font></Label>
-                                                <Label fx:id="partnerOneNameLabel" layoutX="90.0" layoutY="3.0" text="null">
+                                                <Label fx:id="partnerOneNameLabel" layoutX="90.0" layoutY="3.0" text="Partner 1">
                                                    <font>
                                                       <Font name="Verdana Italic" size="18.0" />
                                                    </font></Label>
@@ -61,7 +61,7 @@
                                       <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="277.0">
                                              <children>
-                                                <Label fx:id="partnerTwoNameLabel" layoutX="85.0" layoutY="4.0" text="null">
+                                                <Label fx:id="partnerTwoNameLabel" layoutX="85.0" layoutY="4.0" text="Partner 2">
                                                    <font>
                                                       <Font name="Verdana Italic" size="18.0" />
                                                    </font>
@@ -140,10 +140,10 @@
                                         <Image url="@../Resources/Logo.jpeg" />
                                     </image>
                                 </ImageView>
-                                <TextField layoutX="203.0" layoutY="144.0" prefHeight="27.0" prefWidth="230.0" promptText="Name" />
-                                <TextField layoutX="203.0" layoutY="175.0" prefHeight="27.0" prefWidth="230.0" promptText="Email" />
-                                <TextField layoutX="203.0" layoutY="206.0" prefHeight="27.0" prefWidth="230.0" promptText="Subject" />
-                                <TextArea layoutX="203.0" layoutY="237.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="104.0" prefWidth="230.0" promptText="Message" />
+                                <TextField fx:id="contactUsName" layoutX="203.0" layoutY="144.0" prefHeight="27.0" prefWidth="230.0" promptText="Name" />
+                                <TextField fx:id="contactUsEmail" layoutX="203.0" layoutY="175.0" prefHeight="27.0" prefWidth="230.0" promptText="Email" />
+                                <TextField fx:id="contactUsSubject" layoutX="203.0" layoutY="206.0" prefHeight="27.0" prefWidth="230.0" promptText="Subject" />
+                                <TextArea fx:id="contactUsMessage" layoutX="203.0" layoutY="237.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="104.0" prefWidth="230.0" promptText="Message" />
                         <Label layoutX="177.0" layoutY="52.0" text="Date Planner for dates as unique as you!">
                            <font>
                               <Font size="18.0" />
@@ -154,7 +154,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button layoutX="481.0" layoutY="276.0" mnemonicParsing="false" text="Send!" />
+                        <Button layoutX="481.0" layoutY="276.0" mnemonicParsing="false" onAction="#contactUsSendButtonPressed" text="Send!" />
                             </children>
                         </AnchorPane>
                     </content>
