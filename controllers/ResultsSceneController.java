@@ -18,13 +18,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import java.io.File;
 
 public class ResultsSceneController implements Initializable {
 
     // counters for use within the restaurant for loops
     private int restaurantCounter = 0;
     private int restaurantNum = 1;
+
+    // String array for contact us page;
+    private String[] contactUsSubmission = new String[4];
+
+    File contactUsDatabase = new File("contactUs.txt");
 
     // label used to display the temperature
     @FXML
@@ -49,6 +56,22 @@ public class ResultsSceneController implements Initializable {
     // text area used to append restaurant data for partner two
     @FXML
     private TextArea partnerTwoTextArea;
+
+    // Text area for contact us page
+    @FXML
+    private TextField contactUsName;
+
+    // Text area for contact us page
+    @FXML
+    private TextField contactUsEmail;
+
+    // Text area for contact us page
+    @FXML
+    private TextField contactUsSubject;
+
+    // Text area for contact us page
+    @FXML
+    private TextArea contactUsMessage;
 
     /**
      * Starts the program over
@@ -75,6 +98,31 @@ public class ResultsSceneController implements Initializable {
      */
     public void quitButtonPressed() {
         System.exit(0);
+    }
+
+    /**
+     * Grabs data from the contact us tab and adds it to the database
+     *
+     * TODO: write to text file without crashing
+     * @param _event
+     * @throws java.lang.Exception
+     */
+    public void contactUsSendButtonPressed(ActionEvent _event) throws Exception {
+        contactUsSubmission[0] = contactUsName.getText();
+        contactUsSubmission[1] = contactUsEmail.getText();
+        contactUsSubmission[2] = contactUsSubject.getText();
+        contactUsSubmission[3] = contactUsMessage.getText();
+
+        for(int i = 0; i < 4; i++) {
+            System.out.println(contactUsSubmission[i]);
+        }
+        
+        database.DatabaseAdapter.writeIn(contactUsSubmission, contactUsDatabase);
+
+        contactUsName.clear();
+        contactUsEmail.clear();
+        contactUsSubject.clear();
+        contactUsMessage.clear();
     }
 
     /**

@@ -51,6 +51,7 @@ public class Database implements DatabaseInterface {
             writer.write(_array[i]);
             writer.write(coma);
             }
+         
         }
         writer.write(newSpace);
         writer.close();

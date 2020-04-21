@@ -77,7 +77,7 @@ public class PlanSceneController implements Initializable {
     // ==================================== OBVSERVABLE LISTS ====================================
 
     //Combobox for cusine options for partner one, displays all of the options
-    ObservableList<String> cusineOptions = FXCollections.observableArrayList("American", "Caribbean", "Chinese", "French", "Italian", "Indian", "Japanese", "Mexican", "Mediterranean", "Spanish", "Thai");
+    ObservableList<String> cusineOptions = FXCollections.observableArrayList("American", "Chinese", "French", "Italian", "Indian", "Japanese", "Mexican", "Mediterranean");
 
     //Combobox for search limit options for partner one, displays all of the options
     ObservableList<String> searchLimitOptions = FXCollections.observableArrayList("1", "2", "3");
