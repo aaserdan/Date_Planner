@@ -84,17 +84,17 @@
                               <Font name="Verdana Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="311.0" layoutY="100.0" text="Weather Description:">
+                        <Label layoutX="275.0" layoutY="100.0" text="Weather Description:">
                            <font>
                               <Font name="Verdana Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="cityTemp" layoutX="136.0" layoutY="101.0" text="null">
+                        <Label fx:id="cityTemp" layoutX="126.0" layoutY="100.0" text="null">
                            <font>
                               <Font name="Verdana Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="weatherDescription" layoutX="499.0" layoutY="101.0" text="null">
+                        <Label fx:id="weatherDescription" layoutX="453.0" layoutY="100.0" text="null">
                            <font>
                               <Font name="Verdana Bold" size="14.0" />
                            </font>
