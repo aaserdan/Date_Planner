@@ -31,7 +31,7 @@ public class ResultsSceneController implements Initializable {
     // String array for contact us page;
     private String[] contactUsSubmission = new String[4];
 
-    File contactUsDatabase = new File("contactUs.txt");
+    File contactUsDatabase = new File("C:src\\database\\contactUs.txt");
 
     // label used to display the temperature
     @FXML
