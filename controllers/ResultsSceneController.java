@@ -31,7 +31,9 @@ public class ResultsSceneController implements Initializable {
     // String array for contact us page;
     private String[] contactUsSubmission = new String[4];
 
-    File contactUsDatabase = new File("C:src\\database\\contactUs.txt");
+    // Creating file path 
+    // File contactUsDatabase = new File("C:src\\database\\contactUs.txt");
+    File contactUsDatabase = new File("/Users/Alex/Desktop/School/Year 3/CSC 340/datePlanner/src/database/contactUs.txt");
 
     // label used to display the temperature
     @FXML
@@ -108,21 +110,21 @@ public class ResultsSceneController implements Initializable {
      * @throws java.lang.Exception
      */
     public void contactUsSendButtonPressed(ActionEvent _event) throws Exception {
-        contactUsSubmission[0] = contactUsName.getText();
-        contactUsSubmission[1] = contactUsEmail.getText();
-        contactUsSubmission[2] = contactUsSubject.getText();
-        contactUsSubmission[3] = contactUsMessage.getText();
-
-        for(int i = 0; i < 4; i++) {
-            System.out.println(contactUsSubmission[i]);
-        }
         
+        // Filling in the string array for the feedback to be posted into the array
+        contactUsSubmission[0] = this.contactUsName.getText();
+        contactUsSubmission[1] = this.contactUsEmail.getText();
+        contactUsSubmission[2] = this.contactUsSubject.getText();
+        contactUsSubmission[3] = this.contactUsMessage.getText();
+        
+        // calling the database adapter to store the data
         database.DatabaseAdapter.writeIn(contactUsSubmission, contactUsDatabase);
 
-        contactUsName.clear();
-        contactUsEmail.clear();
-        contactUsSubject.clear();
-        contactUsMessage.clear();
+        // clearing the fields
+        this.contactUsName.clear();
+        this.contactUsEmail.clear();
+        this.contactUsSubject.clear();
+        this.contactUsMessage.clear();
     }
 
     /**
