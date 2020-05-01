@@ -6,6 +6,7 @@ package controllers;
  * Last updated April 14 2020
  *
  * @Author Alejandro
+ * @author Nimra
  */
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,7 +32,11 @@ public class ResultsSceneController implements Initializable {
     // String array for contact us page;
     private String[] contactUsSubmission = new String[4];
 
-    File contactUsDatabase = new File("C:src\\database\\contactUs.txt");
+    //Creates a file a filepath
+    String fileName = "contactUs.txt";
+    String workingDirectory = System.getProperty("user.dir") + File.separator + "src" + File.separator + "database";
+    String filePath = workingDirectory + File.separator + fileName;
+    File contactUsDatabase = new File(filePath);
 
     // label used to display the temperature
     @FXML
@@ -104,6 +109,7 @@ public class ResultsSceneController implements Initializable {
      * Grabs data from the contact us tab and adds it to the database
      *
      * TODO: write to text file without crashing
+     *
      * @param _event
      * @throws java.lang.Exception
      */
@@ -113,10 +119,10 @@ public class ResultsSceneController implements Initializable {
         contactUsSubmission[2] = contactUsSubject.getText();
         contactUsSubmission[3] = contactUsMessage.getText();
 
-        for(int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             System.out.println(contactUsSubmission[i]);
         }
-        
+
         database.DatabaseAdapter.writeIn(contactUsSubmission, contactUsDatabase);
 
         contactUsName.clear();
