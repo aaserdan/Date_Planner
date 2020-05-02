@@ -6,12 +6,13 @@ package controllers;
  * Last updated April 14 2020
  *
  * @Author Alejandro
+ * @author Nimra
  */
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXMLLoader;ß
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -31,9 +32,11 @@ public class ResultsSceneController implements Initializable {
     // String array for contact us page;
     private String[] contactUsSubmission = new String[4];
 
-    // Creating file path 
-    // File contactUsDatabase = new File("C:src\\database\\contactUs.txt");
-    File contactUsDatabase = new File("/Users/Alex/Desktop/School/Year 3/CSC 340/datePlanner/src/database/contactUs.txt");
+    //Creates a file a filepath
+    String fileName = "contactUs.txt";
+    String workingDirectory = System.getProperty("user.dir") + File.separator + "src" + File.separator + "database";
+    String filePath = workingDirectory + File.separator + fileName;
+    File contactUsDatabase = new File(filePath);
 
     // label used to display the temperature
     @FXML
@@ -106,6 +109,7 @@ public class ResultsSceneController implements Initializable {
      * Grabs data from the contact us tab and adds it to the database
      *
      * TODO: write to text file without crashing
+     *
      * @param _event
      * @throws java.lang.Exception
      */
