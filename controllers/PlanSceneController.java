@@ -8,8 +8,10 @@ package controllers;
  * @author Nimra
  * @author Alejandro
  */
+
 import apis.FoodAPIAdapter;
 import apis.WeatherAPIAdapter;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -29,6 +31,14 @@ import models.*;
 public class PlanSceneController implements Initializable {
 
     // ==================================== VARIABLES ====================================
+
+    private final String[] resultsSubmission = new String[5];
+
+    //Creates a file for the stored results text file
+    String fileName = "StoredResults.txt";
+    String workingDirectory = System.getProperty("user.dir") + File.separator + "src" + File.separator + "database";
+    String filePath = workingDirectory + File.separator + fileName;
+    File storedResultsDatabase = new File(filePath);
 
     // Variables that store the weather data to be passed to results
     private String[] weatherData;
