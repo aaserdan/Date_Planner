@@ -30,9 +30,9 @@ public class ResultsSceneController implements Initializable {
     private int restaurantNum = 1;
 
     // String array for contact us page;
-    private String[] contactUsSubmission = new String[4];
+    private final String[] contactUsSubmission = new String[4];
 
-    //Creates a file a filepath
+    //Creates a file a filepath that points to the contact us database file
     String fileName = "contactUs.txt";
     String workingDirectory = System.getProperty("user.dir") + File.separator + "src" + File.separator + "database";
     String filePath = workingDirectory + File.separator + fileName;
@@ -114,13 +114,13 @@ public class ResultsSceneController implements Initializable {
      * @throws java.lang.Exception
      */
     public void contactUsSendButtonPressed(ActionEvent _event) throws Exception {
-        
+
         // Filling in the string array for the feedback to be posted into the array
         contactUsSubmission[0] = this.contactUsName.getText();
         contactUsSubmission[1] = this.contactUsEmail.getText();
         contactUsSubmission[2] = this.contactUsSubject.getText();
         contactUsSubmission[3] = this.contactUsMessage.getText();
-        
+
         // calling the database adapter to store the data
         database.DatabaseAdapter.writeIn(contactUsSubmission, contactUsDatabase);
 
