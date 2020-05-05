@@ -38,7 +38,7 @@ public class Database implements DatabaseInterface {
      */
     public static final String initialSeparator = " :";
     public static final String newSpace = "\n";
-    public static final String separator = "-1;2;3;4-";
+    public static final String separator = "-*;+*+;*-";
 
     // Error messages
     static final String GenError = "An Error Occurred!";
@@ -252,7 +252,7 @@ public class Database implements DatabaseInterface {
         String fileName = "temp.txt";
         String wkgDirectory = System.getProperty("user.dir") + File.separator + "src" + File.separator + "Database";
         String tempFilePath = wkgDirectory + File.separator + fileName;
-        // Creates the new files accoridingly 
+        // Creates the new files accoridingly
         File oldFile = new File(filePath);
         File newFile = new File(tempFilePath);
         String UUID = "";
@@ -265,7 +265,7 @@ public class Database implements DatabaseInterface {
             scanner = new Scanner(new File(filePath));
             boolean deleted = false;
             /*
-        Scans through the original file, when if finds the UUID to be deleted it does not write it 
+        Scans through the original file, when if finds the UUID to be deleted it does not write it
         in new file and changes deleted boolean value to true; else the deleted stays false.
              */
             while (scanner.hasNext()) {
@@ -348,7 +348,7 @@ public class Database implements DatabaseInterface {
             PrintWriter printWriter = new PrintWriter(bufWriter);
             scanner = new Scanner(new File(_fileA.getCanonicalPath()));
             /*
-        Scans through _fileA file and writes the data into _fileB 
+        Scans through _fileA file and writes the data into _fileB
              */
             while (scanner.hasNext()) {
                 data = scanner.nextLine();
@@ -436,7 +436,7 @@ public class Database implements DatabaseInterface {
         String fileName = "temp.txt";
         String wkgDirectory = System.getProperty("user.dir") + File.separator + "src" + File.separator + "Database";
         String tempFilePath = wkgDirectory + File.separator + fileName;
-        // Creates the new files accoridingly 
+        // Creates the new files accoridingly
         File oldFile = new File(filePath);
         File newFile = new File(tempFilePath);
         //Strings to help writeIn the data
@@ -450,7 +450,7 @@ public class Database implements DatabaseInterface {
             scanner = new Scanner(new File(filePath));
             boolean updated = false;
             /*
-        Scans through the original file, when if finds the UUID to be deleted it does not write it 
+        Scans through the original file, when if finds the UUID to be deleted it does not write it
         in new file and changes deleted boolean value to true; else the deleted stays false.
              */
             while (scanner.hasNext()) {

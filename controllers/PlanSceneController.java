@@ -3,7 +3,7 @@ package controllers;
 /**
  * This class serves as the controller for the plan scene
  *
- * Last updated April 9 2020
+ * Last updated May 5 2020
  *
  * @author Nimra
  * @author Alejandro
@@ -32,7 +32,7 @@ public class PlanSceneController implements Initializable {
 
     // ==================================== VARIABLES ====================================
 
-    private final String[] resultsSubmission = new String[5];
+    private final String[] dataSearchSubmission = new String[6];
 
     //Creates a file for the stored results text file
     String fileName = "StoredResults.txt";
@@ -115,6 +115,7 @@ public class PlanSceneController implements Initializable {
             setPartnerTwoData(partnerTwo);
             setPartnerTwoRestaurants(partnerTwo);
             getWeatherData(partnerOne);
+            submitDataToDB();
         }
         // Opens PlanSceneError scene if inputs are invalid or not all filled in
         catch (Exception ex) {
@@ -160,6 +161,23 @@ public class PlanSceneController implements Initializable {
         Partner2CusinecomboBox.setItems(cusineOptions);
         Partner1SearchLimitcomboBox.setItems(searchLimitOptions);
         Partner2SearchLimitcomboBox.setItems(searchLimitOptions);
+    }
+
+    /**
+     * Method that saves users preferences and data to the database
+     */
+    public void submitDataToDB(){
+
+        // Stores user preferences and data in a string array to be passed
+        dataSearchSubmission[0] = "User 1 Name: " + this.partner1Name.getText();
+        dataSearchSubmission[1] = "User 1 Cuisine: " + this.Partner1CusinecomboBox.getValue();
+        dataSearchSubmission[2] = "User 2 Name: " + this.partner2Name.getText();
+        dataSearchSubmission[3] = "User 2 Cuisine: " + this.Partner2CusinecomboBox.getValue();
+        dataSearchSubmission[4] = "City: " + this.city.getText();
+        dataSearchSubmission[5] = "Zip Code: " + this.zipCode.getText();
+
+        // Submits user preferences and data to the database
+        database.DatabaseAdapter.writeIn(dataSearchSubmission, storedResultsDatabase);
     }
 
     //====================================== SETTERS ======================================
